@@ -10,32 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_14_165437) do
+ActiveRecord::Schema[7.0].define(version: 20_230_614_165_437) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "reservations", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "room_id"
-    t.date "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_reservations_on_room_id"
-    t.index ["user_id"], name: "index_reservations_on_user_id"
+  create_table 'reservations', force: :cascade do |t|
+    t.bigint 'user_id'
+    t.bigint 'room_id'
+    t.date 'date'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['room_id'], name: 'index_reservations_on_room_id'
+    t.index ['user_id'], name: 'index_reservations_on_user_id'
   end
 
-  create_table "rooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'rooms', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'username'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key "reservations", "rooms"
-  add_foreign_key "reservations", "users"
+  add_foreign_key 'reservations', 'rooms'
+  add_foreign_key 'reservations', 'users'
 end
