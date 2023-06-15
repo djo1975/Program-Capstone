@@ -10,3 +10,8 @@ User.create(username: 'john_doe')
 User.create(username: 'djo_doe')
 User.create(username: 'alwyn_doe')
 User.create(username: 'mohi_doe')
+User.create(username: 'mosses_doe')
+user = User.first # Pridružite odgovarajućeg korisnika
+room = Room.first # Pridružite odgovarajuću sobu
+comment = Comment.create(user:, room:, content: 'Example Comment')
+Like.create(user:, comment:)
