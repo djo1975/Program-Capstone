@@ -1,4 +1,4 @@
-# app/models/room.rb
-class Room < ApplicationRecord
-  # Associations, validations, and other code specific to Room model
+class Room < ActiveRecord::Base
+  has_many :comments
+  has_and_belongs_to_many :reservations
 end
