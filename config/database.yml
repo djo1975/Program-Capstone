@@ -1,3 +1,4 @@
+
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -18,3 +19,4 @@ production:
   database: booking_production
   username: booking
   password: <%= ENV["BOOKING_DATABASE_PASSWORD"] %>
+

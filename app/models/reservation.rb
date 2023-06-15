@@ -1,3 +1,4 @@
+
 class Reservation < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
@@ -5,4 +6,5 @@ class Reservation < ApplicationRecord
 
   belongs_to :user
   has_many :rooms, through: :room_reservations
+
 end
