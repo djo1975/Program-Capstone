@@ -2,6 +2,11 @@
 class LikesController < ApplicationController
   before_action :set_like, only: %i[show destroy]
 
+  def index
+    likes = Like.all
+    render json: likes
+  end
+
   def show
     render json: @like, serializer: LikeSerializer
   end

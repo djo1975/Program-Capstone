@@ -37,7 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 20_230_615_074_747) do
     t.bigint 'user_id'
     t.bigint 'room_id'
     t.date 'date'
-
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['room_id'], name: 'index_reservations_on_room_id'
@@ -46,7 +45,6 @@ ActiveRecord::Schema[7.0].define(version: 20_230_615_074_747) do
 
   create_table 'rooms', force: :cascade do |t|
     t.string 'name'
-
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
