@@ -4,5 +4,5 @@ class Reservation < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :user
-  has_many :rooms, through: :room_reservations
+  has_many :rooms, through: :reservations_rooms
 end
