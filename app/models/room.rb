@@ -1,4 +1,4 @@
 class Room < ActiveRecord::Base
   has_many :comments
-  has_and_belongs_to_many :reservations
+  has_many :rooms, through: :room_reservations
 end

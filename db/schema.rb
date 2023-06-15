@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_615_113_525) do
+ActiveRecord::Schema[7.0].define(version: 20_230_615_123_115) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -35,19 +35,19 @@ ActiveRecord::Schema[7.0].define(version: 20_230_615_113_525) do
 
   create_table 'reservations', force: :cascade do |t|
     t.bigint 'user_id'
-    t.bigint 'room_id'
-    t.date 'date'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.index ['room_id'], name: 'index_reservations_on_room_id'
+    t.date 'start_date'
+    t.date 'end_date'
+    t.string 'description'
     t.index ['user_id'], name: 'index_reservations_on_user_id'
   end
 
-  create_table 'reservations_rooms', id: false, force: :cascade do |t|
+  create_table 'room_reservations', id: false, force: :cascade do |t|
     t.bigint 'room_id', null: false
     t.bigint 'reservation_id', null: false
-    t.index %w[reservation_id room_id], name: 'index_reservations_rooms_on_reservation_id_and_room_id'
-    t.index %w[room_id reservation_id], name: 'index_reservations_rooms_on_room_id_and_reservation_id'
+    t.index %w[reservation_id room_id], name: 'index_room_reservations_on_reservation_id_and_room_id'
+    t.index %w[room_id reservation_id], name: 'index_room_reservations_on_room_id_and_reservation_id'
   end
 
   create_table 'rooms', force: :cascade do |t|
@@ -69,6 +69,5 @@ ActiveRecord::Schema[7.0].define(version: 20_230_615_113_525) do
   add_foreign_key 'comments', 'users'
   add_foreign_key 'likes', 'comments'
   add_foreign_key 'likes', 'users'
-  add_foreign_key 'reservations', 'rooms', on_delete: :cascade
   add_foreign_key 'reservations', 'users'
 end
