@@ -11,6 +11,6 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   def generate_jwt
-    JWT.encode({ id: id, exp: 60.days.from_now.to_i }, Rails.application.credentials.jwt_secret_key)
+    JWT.encode({ id:, exp: 60.days.from_now.to_i }, Rails.application.credentials.jwt_secret_key)
   end
 end

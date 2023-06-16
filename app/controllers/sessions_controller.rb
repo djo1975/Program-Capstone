@@ -7,18 +7,18 @@ class SessionsController < Devise::SessionsController
       sign_in(resource_name, resource)
       token = resource.generate_jwt
       resource.update(jti: token)
-      render json: { message: 'Signed in successfully', user: resource, token: token }
+      render json: { message: 'Signed in successfully', user: resource, token: }
     else
       render json: { message: 'Invalid email or password' }, status: :unprocessable_entity
     end
   end
 
-    def destroy
-        if current_user
-            sign_out(current_user)
-            render json: { message: 'Signed out successfully' }, status: :ok
-        else
-            render json: { message: 'No active session' }, status: :unprocessable_entity
-        end
+  def destroy
+    if current_user
+      sign_out(current_user)
+      render json: { message: 'Signed out successfully' }, status: :ok
+    else
+      render json: { message: 'No active session' }, status: :unprocessable_entity
     end
+  end
 end
