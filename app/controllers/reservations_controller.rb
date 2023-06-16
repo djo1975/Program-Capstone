@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show edit update destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /reservations or /reservations.json
   def index
@@ -20,14 +21,14 @@ class ReservationsController < ApplicationController
 
   # POST /reservations or /reservations.json
   def create
-    @reservation = Reservation.new(reservation_params)
-
+    # @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.new(start_date: params[:start_date], end_date: params[:end_date], description: params[:description], user_id: params[:user_id])
     respond_to do |format|
       if @reservation.save
-        format.html { redirect_to reservation_url(@reservation), notice: 'Reservation was successfully created.' }
+        # format.html { redirect_to reservation_url(@reservation), notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        # format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @reservation.errors, status: :unprocessable_entity }
       end
     end
