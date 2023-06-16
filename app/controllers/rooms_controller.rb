@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
     if @room.save
       render json: { status: 'success', message: 'Room created successfully', data: @room }, status: :created
     else
-      render json: { status: 'error', message: 'Reservation not created', data: @room.errors }, status: :unprocessable_entity
+      render json: { status: 'error', message: 'Room not created', data: @room.errors }, status: :unprocessable_entity
     end
   end
 
