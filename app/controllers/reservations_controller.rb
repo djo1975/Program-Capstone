@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
   # POST /reservations or /reservations.json
   def create
     # @reservation = Reservation.new(reservation_params)
-    @reservation = Reservation.new(start_date: params[:start_date], end_date: params[:end_date], description: params[:description], user_id: params[:user_id])
+    @reservation = Reservation.new(start_date: params[:start_date], end_date: params[:end_date], description: params[:description], user_id: params[:user_id], room_id: params[:room_id])
       if @reservation.save
         # format.html { redirect_to reservation_url(@reservation), notice: 'Reservation was successfully created.' }
         # format.json { render :@reservation, status: :created}
