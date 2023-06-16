@@ -1,4 +1,3 @@
-
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[show edit update destroy]
 
@@ -72,4 +71,3 @@ class ReservationsController < ApplicationController
       .permit(:start_date, :end_date, :description, :user_id, :room_id)
   end
 end
-
