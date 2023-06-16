@@ -46,6 +46,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model_serializers (0.10.13)
+      actionpack (>= 4.1, < 7.1)
+      activemodel (>= 4.1, < 7.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (7.0.5)
       activesupport (= 7.0.5)
       globalid (>= 0.3.6)
@@ -69,7 +74,6 @@ GEM
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
-    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -83,34 +87,15 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    case_transform (0.2)
+      activesupport
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
-    devise (4.9.2)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
-      responders
-      warden (~> 1.2.3)
-    devise-jwt (0.11.0)
-      devise (~> 4.0)
-      warden-jwt_auth (~> 0.8)
-    dotenv (2.8.1)
-    dotenv-rails (2.8.1)
-      dotenv (= 2.8.1)
-      railties (>= 3.2)
-    dry-auto_inject (1.0.1)
-      dry-core (~> 1.0)
-      zeitwerk (~> 2.6)
-    dry-configurable (1.0.1)
-      dry-core (~> 1.0, < 2)
-      zeitwerk (~> 2.6)
-    dry-core (1.0.0)
-      concurrent-ruby (~> 1.0)
-      zeitwerk (~> 2.6)
+    diff-lcs (1.5.0)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -126,7 +111,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.3)
-    jwt (2.7.1)
+    jsonapi-renderer (0.2.2)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -151,17 +136,13 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.2-x64-mingw-ucrt)
-      racc (~> 1.4)
     nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
-    orm_adapter (0.5.0)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
     pg (1.5.3)
-    pg (1.5.3-x64-mingw-ucrt)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -203,10 +184,24 @@ GEM
     regexp_parser (2.8.1)
     reline (0.3.5)
       io-console (~> 0.5)
-    responders (3.1.0)
-      actionpack (>= 5.2)
-      railties (>= 5.2)
     rexml (3.2.5)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.5)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.3)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.12)
+      rspec-expectations (~> 3.12)
+      rspec-mocks (~> 3.12)
+      rspec-support (~> 3.12)
+    rspec-support (3.12.0)
     rubocop (1.52.1)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -232,7 +227,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.3-x64-mingw-ucrt)
     sqlite3 (1.6.3-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
@@ -244,16 +238,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2023.3)
-      tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
-    warden (1.2.9)
-      rack (>= 2.0.9)
-    warden-jwt_auth (0.8.0)
-      dry-auto_inject (>= 0.8, < 2)
-      dry-configurable (>= 0.13, < 2)
-      jwt (~> 2.1)
-      warden (~> 1.2)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -272,22 +257,20 @@ GEM
     zeitwerk (2.6.8)
 
 PLATFORMS
-  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
+  active_model_serializers
   bootsnap
   capybara
   debug
-  devise
-  devise-jwt
-  dotenv-rails
   importmap-rails
   jbuilder
   pg
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.5)
+  rspec-rails
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails
