@@ -14,23 +14,26 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
 
     if @room.save
-      render json: @room, status: :created
+      render json: { status: 'success', message: 'Room created successfully', data: @room }, status: :created
     else
-      render json: @room.errors, status: :unprocessable_entity
+      render json: { status: 'error', message: 'Room not created', data: @room.errors }, status: :unprocessable_entity
     end
   end
 
   def update
     if @room.update(room_params)
-      render json: @room
+      render json: { status: 'success', message: 'Room updated successfully', data: @room }, status: :ok
     else
-      render json: @room.errors, status: :unprocessable_entity
+      render json: { status: 'error', message: 'Room not updated', data: @room.errors }, status: :unprocessable_entity
     end
   end
 
   def destroy
     @room.destroy
-    head :no_content
+
+    # format.json { head :no_content }
+
+    render json: { status: 'success', message: 'Room deleted successfully', data: @room }, status: :ok
   end
 
   private
