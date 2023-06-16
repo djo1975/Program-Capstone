@@ -112,6 +112,7 @@ GEM
       activesupport (>= 5.0.0)
     json (2.6.3)
     jsonapi-renderer (0.2.2)
+    jwt (2.7.1)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -266,6 +267,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  jwt
   pg
   puma (~> 5.0)
   rack-cors
