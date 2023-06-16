@@ -22,8 +22,8 @@ class ReservationsController < ApplicationController
 
   # POST /reservations or /reservations.json
   def create
-    # @reservation = Reservation.new(reservation_params)
-    @reservation = Reservation.new(start_date: params[:start_date], end_date: params[:end_date], description: params[:description], user_id: params[:user_id], room_id: params[:room_id])
+    @reservation = Reservation.new(reservation_params)
+    # @reservation = Reservation.new(start_date: params[:start_date], end_date: params[:end_date], description: params[:description], user_id: params[:user_id], room_id: params[:room_id])
       if @reservation.save
         # format.html { redirect_to reservation_url(@reservation), notice: 'Reservation was successfully created.' }
         # format.json { render :@reservation, status: :created}
@@ -53,10 +53,10 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation.destroy
 
-    respond_to do |format|
-      format.html { redirect_to reservations_url, notice: 'Reservation was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+   
+      # format.json { head :no_content }
+
+      render json: { status: "success", message: "Reservation deleted successfully", data: @reservation }, status: :ok
   end
 
   private
