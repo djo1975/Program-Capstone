@@ -1,5 +1,6 @@
 class Room < ApplicationRecord
   has_many :comments
+
   has_many :reservations
 
   validates :name, presence: true
