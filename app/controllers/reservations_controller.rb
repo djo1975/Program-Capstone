@@ -9,7 +9,9 @@ class ReservationsController < ApplicationController
   end
 
   # GET /reservations/1 or /reservations/1.json
-  def show; end
+  def show; 
+    render json: @reservation
+  end
 
   # GET /reservations/new
   def new
@@ -26,7 +28,10 @@ class ReservationsController < ApplicationController
     respond_to do |format|
       if @reservation.save
         # format.html { redirect_to reservation_url(@reservation), notice: 'Reservation was successfully created.' }
-        format.json { render :show, status: :created, location: @reservation }
+        # format.json { render :@reservation, status: :created}
+        # render json: @reservation
+        # render json: @reservation, status: :created, location: @reservation
+        render json: { status: "success", message: "Reservation created successfully", data: @reservation }, status: :created
       else
         # format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @reservation.errors, status: :unprocessable_entity }
