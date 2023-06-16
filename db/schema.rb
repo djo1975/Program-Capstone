@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_15_123115) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_16_073559) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_123115) do
     t.date "start_date"
     t.date "end_date"
     t.string "description"
+    t.bigint "room_id"
+    t.index ["room_id"], name: "index_reservations_on_room_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
@@ -69,5 +71,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_123115) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "comments"
   add_foreign_key "likes", "users"
+  add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
 end
