@@ -46,7 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 20_230_616_073_559) do
     t.index ['user_id'], name: 'index_reservations_on_user_id'
   end
 
-
   create_table 'rooms', force: :cascade do |t|
     t.string 'name'
     t.datetime 'created_at', null: false
