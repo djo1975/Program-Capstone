@@ -14,23 +14,23 @@ class CommentsController < ApplicationController
   def create
     comment = Comment.new(comment_params)
     if comment.save
-      render json: comment, status: :created
+      render json: { status: 'success', message: 'Comment created successfully', data: comment }, status: :created
     else
-      render json: comment.errors, status: :unprocessable_entity
+      render json: { status: 'error', message: 'Comment not created', data: comment.errors }, status: :unprocessable_entity
     end
   end
 
   def update
     if @comment.update(comment_params)
-      render json: @comment
+      render json: { status: 'success', message: 'Comment updated successfully', data: @comment }, status: :ok
     else
-      render json: @comment.errors, status: :unprocessable_entity
+      render json: { status: 'error', message: 'Comment not updated', data: @comment.errors }, status: :unprocessable_entity
     end
   end
 
   def destroy
     @comment.destroy
-    head :no_content
+    render json: { status: 'success', message: 'Comment deleted successfully', data: @comment }, status: :ok
   end
 
   private

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_616_073_559) do
+ActiveRecord::Schema[7.0].define(version: 20_230_615_114_346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -35,13 +35,12 @@ ActiveRecord::Schema[7.0].define(version: 20_230_616_073_559) do
 
   create_table 'reservations', force: :cascade do |t|
     t.bigint 'user_id'
+    t.bigint 'room_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.date 'start_date'
     t.date 'end_date'
     t.string 'description'
-
-    t.bigint 'room_id'
     t.index ['room_id'], name: 'index_reservations_on_room_id'
     t.index ['user_id'], name: 'index_reservations_on_user_id'
   end
@@ -70,10 +69,10 @@ ActiveRecord::Schema[7.0].define(version: 20_230_616_073_559) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key 'comments', 'rooms'
+  add_foreign_key 'comments', 'rooms', on_delete: :cascade
   add_foreign_key 'comments', 'users'
   add_foreign_key 'likes', 'comments'
   add_foreign_key 'likes', 'users'
-  add_foreign_key 'reservations', 'rooms'
-  add_foreign_key 'reservations', 'users'
+  add_foreign_key 'reservations', 'rooms', on_delete: :cascade
+  add_foreign_key 'reservations', 'users', on_delete: :cascade
 end
