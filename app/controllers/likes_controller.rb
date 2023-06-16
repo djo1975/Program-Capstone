@@ -8,7 +8,7 @@ class LikesController < ApplicationController
   end
 
   def show
-    render json: @like, serializer: LikeSerializer
+    render json: @like
   end
 
   def create

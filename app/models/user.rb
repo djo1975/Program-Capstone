@@ -4,9 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :jwt_authenticatable,
          jwt_revocation_strategy: self
 
-  has_many :reservations
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :reservations, dependent: :destroy
+  has_many :rooms
 
   validates :username, presence: true, uniqueness: true
 

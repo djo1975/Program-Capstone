@@ -32,3 +32,4 @@ node_modules/
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /.env
+my_notes.txt
