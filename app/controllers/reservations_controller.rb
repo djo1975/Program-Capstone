@@ -32,21 +32,21 @@ class ReservationsController < ApplicationController
         render json: { status: "success", message: "Reservation created successfully", data: @reservation }, status: :created
       else
         # format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
+        # format.json { render json: @reservation.errors, status: :unprocessable_entity }
+        render json: { status: "error", message: "Reservation not created", data: @reservation.errors }, status: :unprocessable_entity
       end
   end
 
   # PATCH/PUT /reservations/1 or /reservations/1.json
   def update
-    respond_to do |format|
+      # @reservation = Reservation.find(params[:id])
       if @reservation.update(reservation_params)
-        format.html { redirect_to reservation_url(@reservation), notice: 'Reservation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @reservation }
+        # format.json { render :show, status: :ok, location: @reservation }
+        render json: { status: "success", message: "Reservation updated successfully", data: @reservation }, status: :ok
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
+        # format.json { render json: @reservation.errors, status: :unprocessable_entity }
+        render json: { status: "error", message: "Reservation not updated", data: @reservation.errors }, status: :unprocessable_entity
       end
-    end
   end
 
   # DELETE /reservations/1 or /reservations/1.json
@@ -68,6 +68,7 @@ class ReservationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date, :description)
+    params.require(:reservation)
+          .permit(:start_date, :end_date, :description,:user_id, :room_id)
   end
 end
