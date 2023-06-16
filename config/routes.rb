@@ -13,8 +13,6 @@ Rails.application.routes.draw do
     put 'users/password', to: 'passwords#update'
   end
 
-  root to: 'application#placeholder'
-
   resources :reservations
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :users

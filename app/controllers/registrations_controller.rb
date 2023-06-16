@@ -1,12 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
-  skip_before_action :verify_authenticity_token
   respond_to :json
 
   def create
     @user = User.new(sign_up_params)
 
-    if @user.save
-      sign_up(@user, scope: :user)
+    if @user.valid?
+      @user.jti = @user.generate_jwt
+      @user.save
       render json: { message: 'Signed up successfully', user: @user }
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity

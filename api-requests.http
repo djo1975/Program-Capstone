@@ -1,10 +1,12 @@
+For Testing Purposes Only:
+
 ### User Sign-up ###
 POST http://localhost:3000/users/sign_up
 Content-Type: application/json
 
 {
   "user": {
-    "name": "user1",
+    "username": "user1",
     "email": "user1@example.com",
     "password": "password",
     "password_confirmation": "password"

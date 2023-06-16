@@ -8,17 +8,6 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   # Devise-JWT
-  config.jwt do |jwt|
-    jwt.secret = Rails.application.credentials.devise_jwt_secret_key
-    jwt.dispatch_requests = [
-      ['POST', %r{^/users$}],
-      ['POST', %r{^/users/sign_in$}],
-      ['DELETE', %r{^/users/sign_out$}]
-    ]
-    jwt.revocation_requests = [
-      ['DELETE', %r{^/users/sign_out$}]
-    ]
-  end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -273,7 +262,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html, :turbo_stream]
+  config.navigational_formats = []
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
@@ -320,4 +309,15 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+  config.jwt do |jwt|
+    jwt.secret = Rails.application.credentials.jwt_secret_key
+    jwt.dispatch_requests = [
+      ['POST', %r{^/users$}],
+      ['POST', %r{^/users/sign_in$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/users/sign_out$}]
+    ]
+    jwt.expiration_time = 1.hour.to_i
+  end
 end

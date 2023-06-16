@@ -10,72 +10,73 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_616_063_545) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_16_063545) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'comments', force: :cascade do |t|
-    t.bigint 'user_id', null: false
-    t.bigint 'room_id', null: false
-    t.text 'content'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['room_id'], name: 'index_comments_on_room_id'
-    t.index ['user_id'], name: 'index_comments_on_user_id'
+  create_table "comments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_comments_on_room_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table 'likes', force: :cascade do |t|
-    t.bigint 'user_id', null: false
-    t.bigint 'comment_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['comment_id'], name: 'index_likes_on_comment_id'
-    t.index ['user_id'], name: 'index_likes_on_user_id'
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "comment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table 'reservations', force: :cascade do |t|
-    t.bigint 'user_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.date 'start_date'
-    t.date 'end_date'
-    t.string 'description'
-    t.index ['user_id'], name: 'index_reservations_on_user_id'
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.string "description"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
-  create_table 'room_reservations', id: false, force: :cascade do |t|
-    t.bigint 'room_id', null: false
-    t.bigint 'reservation_id', null: false
-    t.index %w[reservation_id room_id], name: 'index_room_reservations_on_reservation_id_and_room_id'
-    t.index %w[room_id reservation_id], name: 'index_room_reservations_on_room_id_and_reservation_id'
+  create_table "room_reservations", id: false, force: :cascade do |t|
+    t.bigint "room_id", null: false
+    t.bigint "reservation_id", null: false
+    t.index ["reservation_id", "room_id"], name: "index_room_reservations_on_reservation_id_and_room_id"
+    t.index ["room_id", "reservation_id"], name: "index_room_reservations_on_room_id_and_reservation_id"
   end
 
-  create_table 'rooms', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'icon'
-    t.string 'description'
-    t.float 'cost_per_day'
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "icon"
+    t.string "description"
+    t.float "cost_per_day"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'username'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'jti'
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "jti", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["jti"], name: "index_users_on_jti", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key 'comments', 'rooms'
-  add_foreign_key 'comments', 'users'
-  add_foreign_key 'likes', 'comments'
-  add_foreign_key 'likes', 'users'
-  add_foreign_key 'reservations', 'users'
+  add_foreign_key "comments", "rooms"
+  add_foreign_key "comments", "users"
+  add_foreign_key "likes", "comments"
+  add_foreign_key "likes", "users"
+  add_foreign_key "reservations", "users"
 end
