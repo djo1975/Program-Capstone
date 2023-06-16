@@ -17,7 +17,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_foreign_key 'reservations', 'users'
-    add_foreign_key 'reservations', 'rooms'
+    add_foreign_key 'reservations', 'users', on_delete: :cascade
+    add_foreign_key 'reservations', 'rooms', on_delete: :cascade
   end
 end

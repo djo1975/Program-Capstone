@@ -16,15 +16,16 @@ class CommentsController < ApplicationController
     if comment.save
       render json: { status: 'success', message: 'Comment created successfully', data: comment }, status: :created
     else
-      render json: { status: 'error', message: 'Commnet not created', data: comment.errors }, status: :unprocessable_entity
+      render json: { status: 'error', message: 'Comment not created', data: comment.errors }, status: :unprocessable_entity
     end
   end
 
   def update
     if @comment.update(comment_params)
-      render  json: { status: 'success', message: 'Comment updated successfully', data: @comment }, status: :ok
+      render json: { status: 'success', message: 'Comment updated successfully', data: @comment }, status: :ok
     else
-      render json: json: { status: 'error', message: 'Comment not updated', data: @comment.errors }, status: :unprocessable_entity
+      render json: { status: 'error', message: 'Comment not updated', data: @comment.errors }, status: :unprocessable_entity
+    end
   end
 
   def destroy
