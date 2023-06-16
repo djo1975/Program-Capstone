@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 20_230_616_073_559) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -40,16 +42,17 @@ ActiveRecord::Schema[7.0].define(version: 20_230_616_073_559) do
     t.date 'start_date'
     t.date 'end_date'
     t.string 'description'
+
     t.bigint 'room_id'
     t.index ['room_id'], name: 'index_reservations_on_room_id'
     t.index ['user_id'], name: 'index_reservations_on_user_id'
   end
 
   create_table 'room_reservations', id: false, force: :cascade do |t|
+
     t.bigint 'room_id', null: false
-    t.bigint 'reservation_id', null: false
-    t.index %w[reservation_id room_id], name: 'index_room_reservations_on_reservation_id_and_room_id'
-    t.index %w[room_id reservation_id], name: 'index_room_reservations_on_room_id_and_reservation_id'
+    t.index ['room_id'], name: 'index_reservations_on_room_id'
+    t.index ['user_id'], name: 'index_reservations_on_user_id'
   end
 
   create_table 'rooms', force: :cascade do |t|

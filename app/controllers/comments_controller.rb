@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   end
 
   def show
-    render json: @comment, serializer: CommentSerializer
+    render json: @comment
   end
 
   def create

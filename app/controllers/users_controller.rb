@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    render json: @user, serializer: UserSerializer
+    render json: @user
   end
 
   def create
@@ -29,6 +29,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    Like.where(comment_id: Comment.where(user_id: @user.id).pluck(:id)).delete_all
+    Comment.where(user_id: @user.id).delete_all
+    Reservation.where(user_id: @user.id).delete_all
     @user.destroy
     head :no_content
   end
@@ -40,6 +43,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username)
   end
 end
