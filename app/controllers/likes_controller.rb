@@ -3,8 +3,11 @@ class LikesController < ApplicationController
   before_action :set_like, only: %i[show destroy]
 
   def index
-    likes = Like.all
-    render json: likes
+    likes = Like.all.includes(:comment) # Uključi povezani komentar da bismo izračunali broj lajkova
+    likes_with_counts = likes.map do |like|
+      like.as_json.merge(comment_likes_count: like.comment.likes_count)
+    end
+    render json: likes_with_counts
   end
 
   def show

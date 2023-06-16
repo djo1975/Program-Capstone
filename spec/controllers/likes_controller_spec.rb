@@ -46,4 +46,12 @@ RSpec.describe LikesController, type: :controller do
       expect(response).to have_http_status(:no_content)
     end
   end
+  describe 'GET #index' do
+    it 'returns likes with comment likes count' do
+      get :index
+      json_response = JSON.parse(response.body)
+      expect(json_response.length).to eq(1)
+      expect(json_response[0]['comment_likes_count']).to eq(comment.likes_count)
+    end
+  end
 end
