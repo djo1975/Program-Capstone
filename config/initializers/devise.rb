@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -11,16 +9,15 @@
 Devise.setup do |config|
   # Devise-JWT
   config.jwt do |jwt|
-    jwt.secret= Rails.application.credentials.devise_jwt_secret_key
+    jwt.secret = Rails.application.credentials.devise_jwt_secret_key
     jwt.dispatch_requests = [
       ['POST', %r{^/users$}],
       ['POST', %r{^/users/sign_in$}],
-      ['DELETE', %r{^/users/sign_out$}],
+      ['DELETE', %r{^/users/sign_out$}]
     ]
     jwt.revocation_requests = [
       ['DELETE', %r{^/users/sign_out$}]
     ]
-
   end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing

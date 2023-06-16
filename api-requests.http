@@ -1,0 +1,39 @@
+### User Sign-up ###
+POST http://localhost:3000/users/sign_up
+Content-Type: application/json
+
+{
+  "user": {
+    "name": "user1",
+    "email": "user1@example.com",
+    "password": "password",
+    "password_confirmation": "password"
+  }
+}
+
+
+### User Sign-in ###
+POST http://localhost:3000/users/sign_in
+Content-Type: application/json
+
+{
+  "user": {
+    "email": "user1@example.com",
+    "password": "password"
+  }
+}
+
+
+### User Sign-out ###
+DELETE http://localhost:3000/users/sign_out
+Content-Type: application/json
+
+### Password Reset ###
+POST http://localhost:3000/users/password
+Content-Type: application/json
+
+{
+  "user": {
+    "email": "user1@example.com"
+  }
+}

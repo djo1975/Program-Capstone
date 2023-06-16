@@ -1,10 +1,13 @@
 class SessionsController < Devise::SessionsController
-    respond_to :json
+  respond_to :json
 
-    def create
-        self.user = warden.authenticate!(auth_options)
-        sign_in(user)
-
-        render json: { message: 'Signed in successfully', user: user }
+  def create
+    self.resource = warden.authenticate!(auth_options)
+    if resource
+      sign_in(resource_name, resource)
+      render json: { message: 'Signed in successfully', user: }
+    else
+      render json: { message: 'Invalid email or password' }, status: :unprocessable_entity
     end
+  end
 end

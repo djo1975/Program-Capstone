@@ -279,6 +279,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  devise
   devise-jwt
   dotenv-rails
   importmap-rails
