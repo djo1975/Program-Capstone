@@ -1,0 +1,18 @@
+databases:
+  - name: bookingapi
+    databaseName: bookingapi
+    user: bookingapi_user
+
+services:
+  - type: web
+    name: booking-api
+    runtime: ruby
+    buildCommand: './bin/render-build.sh'
+    startCommand: 'bundle exec puma -C config/puma.rb'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: bookingapi
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
