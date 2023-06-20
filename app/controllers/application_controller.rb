@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # Authenticates the request based on the Authorization header
+  #
+  # @api private
   def authenticate_request
     token = request.headers['Authorization']
     return render_unauthorized unless token
@@ -12,6 +15,9 @@ class ApplicationController < ActionController::Base
     render_unauthorized unless @user
   end
 
+  # Renders an unauthorized response
+  #
+  # @api private
   def render_unauthorized
     render json: { error: 'Unauthorized' }, status: :unauthorized
   end
