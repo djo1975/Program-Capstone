@@ -1,12 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session, if: -> { request.format.json? }
-  before_action :authenticate_request
+  before_action :authenticate_request, unless: :sign_up_or_sign_in_request?
 
   private
 
-  # Authenticates the request based on the Authorization header
-  #
-  # @api private
   def authenticate_request
     token = request.headers['Authorization']
     return render_unauthorized unless token
@@ -15,9 +12,10 @@ class ApplicationController < ActionController::Base
     render_unauthorized unless @user
   end
 
-  # Renders an unauthorized response
-  #
-  # @api private
+  def sign_up_or_sign_in_request?
+    request.path == '/users/sign_in' || request.path == '/users/sign_up'
+  end
+
   def render_unauthorized
     render json: { error: 'Unauthorized' }, status: :unauthorized
   end
