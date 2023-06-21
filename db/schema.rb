@@ -16,12 +16,12 @@ ActiveRecord::Schema[7.0].define(version: 20_230_616_063_545) do
 
   create_table 'comments', force: :cascade do |t|
     t.bigint 'user_id', null: false
-    t.bigint 'room_id', null: false
+    t.bigint 'vespa_id', null: false
     t.text 'content'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.index ['room_id'], name: 'index_comments_on_room_id'
     t.index ['user_id'], name: 'index_comments_on_user_id'
+    t.index ['vespa_id'], name: 'index_comments_on_vespa_id'
   end
 
   create_table 'likes', force: :cascade do |t|
@@ -35,23 +35,14 @@ ActiveRecord::Schema[7.0].define(version: 20_230_616_063_545) do
 
   create_table 'reservations', force: :cascade do |t|
     t.bigint 'user_id'
-    t.bigint 'room_id'
+    t.bigint 'vespa_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.date 'start_date'
     t.date 'end_date'
     t.string 'description'
-    t.index ['room_id'], name: 'index_reservations_on_room_id'
     t.index ['user_id'], name: 'index_reservations_on_user_id'
-  end
-
-  create_table 'rooms', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'icon'
-    t.string 'description'
-    t.float 'cost_per_day'
+    t.index ['vespa_id'], name: 'index_reservations_on_vespa_id'
   end
 
   create_table 'users', force: :cascade do |t|
@@ -69,10 +60,19 @@ ActiveRecord::Schema[7.0].define(version: 20_230_616_063_545) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key 'comments', 'rooms', on_delete: :cascade
+  create_table 'vespas', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'icon'
+    t.string 'description'
+    t.float 'cost_per_day'
+  end
+
   add_foreign_key 'comments', 'users'
+  add_foreign_key 'comments', 'vespas', on_delete: :cascade
   add_foreign_key 'likes', 'comments'
   add_foreign_key 'likes', 'users'
-  add_foreign_key 'reservations', 'rooms', on_delete: :cascade
   add_foreign_key 'reservations', 'users', on_delete: :cascade
+  add_foreign_key 'reservations', 'vespas', on_delete: :cascade
 end
