@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
   belongs_to :user
-  belongs_to :room
+  belongs_to :vespa
   has_many :likes, dependent: :destroy
   def likes_count
     likes.count
