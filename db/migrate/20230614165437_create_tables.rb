@@ -5,19 +5,19 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    create_table 'rooms', force: :cascade do |t|
+    create_table 'vespas', force: :cascade do |t|
       t.string 'name'
       t.timestamps
     end
 
     create_table 'reservations', force: :cascade do |t|
       t.belongs_to :user, index: true
-      t.belongs_to :room, index: true
+      t.belongs_to :vespa, index: true
       t.date 'date'
       t.timestamps
     end
 
     add_foreign_key 'reservations', 'users', on_delete: :cascade
-    add_foreign_key 'reservations', 'rooms', on_delete: :cascade
+    add_foreign_key 'reservations', 'vespas', on_delete: :cascade
   end
 end

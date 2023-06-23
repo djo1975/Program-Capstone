@@ -1,4 +1,4 @@
-class Room < ApplicationRecord
+class Vespa < ApplicationRecord
   has_many :comments
   has_many :reservations
 

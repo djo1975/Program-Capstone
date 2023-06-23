@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
   # @api {post} /comments
   # @param [Hash] comment Comment parameters
   # @option comment [Integer] :user_id User ID
-  # @option comment [Integer] :room_id Room ID
+  # @option comment [Integer] :vespa_id Vespa ID
   # @option comment [String] :content Comment content
   #
   # @return [JSON] JSON response with the created comment details
@@ -66,7 +66,7 @@ class CommentsController < ApplicationController
              type: 'Hash',
              properties: {
                user_id: { type: 'Integer', desc: 'User ID' },
-               room_id: { type: 'Integer', desc: 'Room ID' },
+               vespa_id: { type: 'Integer', desc: 'Vespa ID' },
                content: { type: 'String', desc: 'Comment content' }
              }
            }
@@ -89,7 +89,7 @@ class CommentsController < ApplicationController
   # @param [Integer] id Comment ID
   # @param [Hash] comment Comment parameters
   # @option comment [Integer] :user_id User ID
-  # @option comment [Integer] :room_id Room ID
+  # @option comment [Integer] :vespa_id Vespa ID
   # @option comment [String] :content Comment content
   #
   # @return [JSON] JSON response with the updated comment details
@@ -111,7 +111,7 @@ class CommentsController < ApplicationController
              type: 'Hash',
              properties: {
                user_id: { type: 'Integer', desc: 'User ID' },
-               room_id: { type: 'Integer', desc: 'Room ID' },
+               vespa_id: { type: 'Integer', desc: 'Vespa ID' },
                content: { type: 'String', desc: 'Comment content' }
              }
            }
@@ -161,6 +161,6 @@ class CommentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def comment_params
-    params.require(:comment).permit(:user_id, :room_id, :content)
+    params.require(:comment).permit(:user_id, :vespa_id, :content)
   end
 end

@@ -54,7 +54,7 @@ class ReservationsController < ApplicationController
   # @option reservation [Date] :end_date Reservation end date
   # @option reservation [String] :description Reservation description
   # @option reservation [Integer] :user_id User ID
-  # @option reservation [Integer] :room_id Room ID
+  # @option reservation [Integer] :vespa_id Vespa ID
   #
   # @return [JSON] JSON response with the created reservation details
   api!({
@@ -72,7 +72,7 @@ class ReservationsController < ApplicationController
                end_date: { type: 'Date', desc: 'Reservation end date' },
                description: { type: 'String', desc: 'Reservation description' },
                user_id: { type: 'Integer', desc: 'User ID' },
-               room_id: { type: 'Integer', desc: 'Room ID' }
+               vespa_id: { type: 'Integer', desc: 'Vespa ID' }
              }
            }
          ],
@@ -98,7 +98,7 @@ class ReservationsController < ApplicationController
   # @option reservation [Date] :end_date Reservation end date
   # @option reservation [String] :description Reservation description
   # @option reservation [Integer] :user_id User ID
-  # @option reservation [Integer] :room_id Room ID
+  # @option reservation [Integer] :vespa_id Vespa ID
   #
   # @return [JSON] JSON response with the updated reservation details
   api!({
@@ -122,7 +122,7 @@ class ReservationsController < ApplicationController
                end_date: { type: 'Date', desc: 'Reservation end date' },
                description: { type: 'String', desc: 'Reservation description' },
                user_id: { type: 'Integer', desc: 'User ID' },
-               room_id: { type: 'Integer', desc: 'Room ID' }
+               vespa_id: { type: 'Integer', desc: 'Vespa ID' }
              }
            }
          ],
@@ -173,6 +173,6 @@ class ReservationsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def reservation_params
     params.require(:reservation)
-      .permit(:start_date, :end_date, :description, :user_id, :room_id)
+      .permit(:start_date, :end_date, :description, :user_id, :vespa_id)
   end
 end
