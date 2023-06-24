@@ -7,6 +7,9 @@ class CreateTables < ActiveRecord::Migration[7.0]
 
     create_table 'vespas', force: :cascade do |t|
       t.string 'name'
+      t.string 'icon'
+      t.string 'description'
+      t.float 'cost_per_day'
       t.timestamps
     end
 
