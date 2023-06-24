@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  apipie
   devise_for :users, controllers: {
     registrations: 'registrations',
     sessions: 'sessions',
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :reservations
   resources :users
-  resources :vespas
+  resources :rooms
   resources :comments
   resources :likes
 end

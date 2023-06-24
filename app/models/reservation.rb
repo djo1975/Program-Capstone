@@ -5,5 +5,5 @@ class Reservation < ApplicationRecord
   validates :description, presence: true
 
   belongs_to :user
-  belongs_to :vespa
+  belongs_to :room
 end

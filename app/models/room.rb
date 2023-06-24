@@ -1,10 +1,6 @@
-class Vespa < ApplicationRecord
+class Room < ApplicationRecord
   has_many :comments
   has_many :reservations
-
-  def comments_count
-    comments.count
-  end
 
   validates :name, presence: true
   validates :icon, presence: true
