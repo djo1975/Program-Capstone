@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type='text/css' rel='stylesheet' href='../apidoc/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='../apidoc/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='../apidoc/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='../apidoc/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div id='container'>
+        <ul class='breadcrumb'>
+  <li>
+    <a href='../apidoc.html'>Booking 1.0</a>
+    <span class='divider'>/</span>
+  </li>
+  <li class='active'>
+    Reservations
+    
+  </li>
+  
+</ul>
+
+<div class='page-header'>
+  <h1>
+    Reservations
+    <br>
+    <small></small>
+  </h1>
+</div>
+
+
+
+
+
+
+<div class='accordion' id='accordion'>
+
+    <hr>
+    <div class='pull-right small'>
+      <a href='../apidoc/reservations/index.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-index'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            GET /reservations
+          </a>
+          <br>
+          <small>{:method=>"GET", :path=>"/reservations", :summary=>"Get all reservations", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all reservations"}}}</small>
+        </h2>
+    </div>
+
+
+    <div id='description-index' class='collapse accordion-body'>
+      
+
+
+
+
+
+
+
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../apidoc/reservations/show.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-show'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            GET /reservations/:id
+          </a>
+          <br>
+          <small>{:method=>"GET", :path=>"/reservations/:id", :summary=>"Get a reservation by ID", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the reservation details"}}}</small>
+        </h2>
+    </div>
+
+
+    <div id='description-show' class='collapse accordion-body'>
+      
+
+
+
+
+
+
+
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../apidoc/reservations/create.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-create'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            POST /reservations
+          </a>
+          <br>
+          <small>{:method=>"POST", :path=>"/reservations", :summary=>"Create a new reservation", :parameters=>[{:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created reservation details"}}}</small>
+        </h2>
+    </div>
+
+
+    <div id='description-create' class='collapse accordion-body'>
+      
+
+
+
+
+
+
+
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../apidoc/reservations/update.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-update'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            PATCH /reservations/:id
+          </a>
+          <br>
+          <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
+        </h2>
+        <h2>
+          <a href='#description-update'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            PUT /reservations/:id
+          </a>
+          <br>
+          <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
+        </h2>
+    </div>
+
+
+    <div id='description-update' class='collapse accordion-body'>
+      
+
+
+
+
+
+
+
+
+    </div>
+    <hr>
+    <div class='pull-right small'>
+      <a href='../apidoc/reservations/destroy.html'> >>> </a>
+    </div>
+    <div>
+        <h2>
+          <a href='#description-destroy'
+           class='accordion-toggle'
+           data-toggle='collapse'
+           data-parent='#accordion'>
+            DELETE /reservations/:id
+          </a>
+          <br>
+          <small>{:method=>"DELETE", :path=>"/reservations/:id", :summary=>"Delete a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the reservation has been deleted"}}}</small>
+        </h2>
+    </div>
+
+
+    <div id='description-destroy' class='collapse accordion-body'>
+      
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='../apidoc/javascripts/bundled/jquery.js'></script>
+<script type='text/javascript' src='../apidoc/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='../apidoc/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='../apidoc/javascripts/apipie.js'></script>
+</body>
+</html>
