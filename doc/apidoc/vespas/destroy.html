@@ -23,22 +23,22 @@
     <span class='divider'>/</span>
   </li>
   <li>
-    <a href='../../apidoc/rooms.html'>
-      Rooms
+    <a href='../../apidoc/vespas.html'>
+      Vespas
       
     </a>
     <span class='divider'>/</span>
   </li>
-  <li class='active'>create</li>
+  <li class='active'>destroy</li>
   
 
 </ul>
 
   <div class='page-header'>
     <h1>
-      POST /rooms
+      DELETE /vespas/:id
       <br>
-      <small>{:method=>"POST", :path=>"/rooms", :summary=>"Create a new room", :parameters=>[{:name=>"room", :description=>"Room parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Room name"}, :icon=>{:type=>"String", :desc=>"Room icon"}, :description=>{:type=>"String", :desc=>"Room description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Room cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created room details"}}}</small>
+      <small>{:method=>"DELETE", :path=>"/espas/:id", :summary=>"Delete a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the vespa has been deleted"}}}</small>
     </h1>
   </div>
 

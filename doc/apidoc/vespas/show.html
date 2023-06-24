@@ -23,22 +23,22 @@
     <span class='divider'>/</span>
   </li>
   <li>
-    <a href='../../apidoc/rooms.html'>
-      Rooms
+    <a href='../../apidoc/vespas.html'>
+      Vespas
       
     </a>
     <span class='divider'>/</span>
   </li>
-  <li class='active'>index</li>
+  <li class='active'>show</li>
   
 
 </ul>
 
   <div class='page-header'>
     <h1>
-      GET /rooms
+      GET /vespas/:id
       <br>
-      <small>{:method=>"GET", :path=>"/rooms", :summary=>"Get all rooms", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all rooms"}}}</small>
+      <small>{:method=>"GET", :path=>"/espas/:id", :summary=>"Get a vespa by ID", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the vespa details"}}}</small>
     </h1>
   </div>
 
