@@ -49,14 +49,6 @@
       <li><a href='#reservations-update'>update</a></li>
       <li><a href='#reservations-destroy'>destroy</a></li>
   </ul>
-  <h4><a href='#rooms'>Rooms</a></h4>
-  <ul>
-      <li><a href='#rooms-index'>index</a></li>
-      <li><a href='#rooms-show'>show</a></li>
-      <li><a href='#rooms-create'>create</a></li>
-      <li><a href='#rooms-update'>update</a></li>
-      <li><a href='#rooms-destroy'>destroy</a></li>
-  </ul>
   <h4><a href='#sessions'>Sessions</a></h4>
   <ul>
       <li><a href='#sessions-create'>create</a></li>
@@ -69,6 +61,14 @@
       <li><a href='#users-create'>create</a></li>
       <li><a href='#users-update'>update</a></li>
       <li><a href='#users-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#vespas'>Vespas</a></h4>
+  <ul>
+      <li><a href='#vespas-index'>index</a></li>
+      <li><a href='#vespas-show'>show</a></li>
+      <li><a href='#vespas-create'>create</a></li>
+      <li><a href='#vespas-update'>update</a></li>
+      <li><a href='#vespas-destroy'>destroy</a></li>
   </ul>
 
 
@@ -170,7 +170,7 @@
             <a href='#comments-create'>
               POST /comments
             </a><br>
-            <small>{:method=>"POST", :path=>"/comments", :summary=>"Create a new comment", :parameters=>[{:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :room_id=>{:type=>"Integer", :desc=>"Room ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created comment details"}}}</small>
+            <small>{:method=>"POST", :path=>"/comments", :summary=>"Create a new comment", :parameters=>[{:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created comment details"}}}</small>
           </h3>
       </div>
 
@@ -198,13 +198,13 @@
             <a href='#comments-update'>
               PATCH /comments/:id
             </a><br>
-            <small>{:method=>"PUT", :path=>"/comments/:id", :summary=>"Update a comment", :parameters=>[{:name=>"id", :description=>"Comment ID", :required=>true, :type=>"Integer"}, {:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :room_id=>{:type=>"Integer", :desc=>"Room ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated comment details"}}}</small>
+            <small>{:method=>"PUT", :path=>"/comments/:id", :summary=>"Update a comment", :parameters=>[{:name=>"id", :description=>"Comment ID", :required=>true, :type=>"Integer"}, {:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated comment details"}}}</small>
           </h3>
           <h3>
             <a href='#comments-update'>
               PUT /comments/:id
             </a><br>
-            <small>{:method=>"PUT", :path=>"/comments/:id", :summary=>"Update a comment", :parameters=>[{:name=>"id", :description=>"Comment ID", :required=>true, :type=>"Integer"}, {:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :room_id=>{:type=>"Integer", :desc=>"Room ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated comment details"}}}</small>
+            <small>{:method=>"PUT", :path=>"/comments/:id", :summary=>"Update a comment", :parameters=>[{:name=>"id", :description=>"Comment ID", :required=>true, :type=>"Integer"}, {:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated comment details"}}}</small>
           </h3>
       </div>
 
@@ -604,7 +604,7 @@
             <a href='#reservations-create'>
               POST /reservations
             </a><br>
-            <small>{:method=>"POST", :path=>"/reservations", :summary=>"Create a new reservation", :parameters=>[{:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :room_id=>{:type=>"Integer", :desc=>"Room ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created reservation details"}}}</small>
+            <small>{:method=>"POST", :path=>"/reservations", :summary=>"Create a new reservation", :parameters=>[{:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created reservation details"}}}</small>
           </h3>
       </div>
 
@@ -632,13 +632,13 @@
             <a href='#reservations-update'>
               PATCH /reservations/:id
             </a><br>
-            <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :room_id=>{:type=>"Integer", :desc=>"Room ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
+            <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
           </h3>
           <h3>
             <a href='#reservations-update'>
               PUT /reservations/:id
             </a><br>
-            <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :room_id=>{:type=>"Integer", :desc=>"Room ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
+            <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
           </h3>
       </div>
 
@@ -667,169 +667,6 @@
               DELETE /reservations/:id
             </a><br>
             <small>{:method=>"DELETE", :path=>"/reservations/:id", :summary=>"Delete a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the reservation has been deleted"}}}</small>
-          </h3>
-      </div>
-
-      <div>
-        
-
-
-      </div>
-  </div>
-
-  <ul class='breadcrumb'  id='rooms'>
-    <li><a href='#'>Booking</a><span class='divider'>/</span></li>
-    <li class='active'>Rooms</li>
-  </ul>
-
-  <div class='page-header'>
-    <h1>
-      <a href='#rooms'>Rooms</a><br>
-      <small></small>
-    </h1>
-  </div>
-
-
-  <div class='accordion' id='accordion'>
-
-      <hr>
-
-      <ul class='breadcrumb' id='rooms-index'>
-        <li>
-          <a href='#'>Booking</a>
-          <span class='divider'>/</span>
-        </li>
-        <li>
-          <a href='#rooms'>Rooms</a>
-          <span class='divider'>/</span>
-        </li>
-        <li class='active'>index</li>
-      </ul>
-
-      <div>
-          <h3>
-            <a href='#rooms-index'>
-              GET /rooms
-            </a><br>
-            <small>{:method=>"GET", :path=>"/rooms", :summary=>"Get all rooms", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all rooms"}}}</small>
-          </h3>
-      </div>
-
-      <div>
-        
-
-
-      </div>
-      <hr>
-
-      <ul class='breadcrumb' id='rooms-show'>
-        <li>
-          <a href='#'>Booking</a>
-          <span class='divider'>/</span>
-        </li>
-        <li>
-          <a href='#rooms'>Rooms</a>
-          <span class='divider'>/</span>
-        </li>
-        <li class='active'>show</li>
-      </ul>
-
-      <div>
-          <h3>
-            <a href='#rooms-show'>
-              GET /rooms/:id
-            </a><br>
-            <small>{:method=>"GET", :path=>"/rooms/:id", :summary=>"Get a room by ID", :parameters=>[{:name=>"id", :description=>"Room ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the room details"}}}</small>
-          </h3>
-      </div>
-
-      <div>
-        
-
-
-      </div>
-      <hr>
-
-      <ul class='breadcrumb' id='rooms-create'>
-        <li>
-          <a href='#'>Booking</a>
-          <span class='divider'>/</span>
-        </li>
-        <li>
-          <a href='#rooms'>Rooms</a>
-          <span class='divider'>/</span>
-        </li>
-        <li class='active'>create</li>
-      </ul>
-
-      <div>
-          <h3>
-            <a href='#rooms-create'>
-              POST /rooms
-            </a><br>
-            <small>{:method=>"POST", :path=>"/rooms", :summary=>"Create a new room", :parameters=>[{:name=>"room", :description=>"Room parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Room name"}, :icon=>{:type=>"String", :desc=>"Room icon"}, :description=>{:type=>"String", :desc=>"Room description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Room cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created room details"}}}</small>
-          </h3>
-      </div>
-
-      <div>
-        
-
-
-      </div>
-      <hr>
-
-      <ul class='breadcrumb' id='rooms-update'>
-        <li>
-          <a href='#'>Booking</a>
-          <span class='divider'>/</span>
-        </li>
-        <li>
-          <a href='#rooms'>Rooms</a>
-          <span class='divider'>/</span>
-        </li>
-        <li class='active'>update</li>
-      </ul>
-
-      <div>
-          <h3>
-            <a href='#rooms-update'>
-              PATCH /rooms/:id
-            </a><br>
-            <small>{:method=>"PUT", :path=>"/rooms/:id", :summary=>"Update a room", :parameters=>[{:name=>"id", :description=>"Room ID", :required=>true, :type=>"Integer"}, {:name=>"room", :description=>"Room parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Room name"}, :icon=>{:type=>"String", :desc=>"Room icon"}, :description=>{:type=>"String", :desc=>"Room description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Room cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated room details"}}}</small>
-          </h3>
-          <h3>
-            <a href='#rooms-update'>
-              PUT /rooms/:id
-            </a><br>
-            <small>{:method=>"PUT", :path=>"/rooms/:id", :summary=>"Update a room", :parameters=>[{:name=>"id", :description=>"Room ID", :required=>true, :type=>"Integer"}, {:name=>"room", :description=>"Room parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Room name"}, :icon=>{:type=>"String", :desc=>"Room icon"}, :description=>{:type=>"String", :desc=>"Room description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Room cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated room details"}}}</small>
-          </h3>
-      </div>
-
-      <div>
-        
-
-
-      </div>
-      <hr>
-
-      <ul class='breadcrumb' id='rooms-destroy'>
-        <li>
-          <a href='#'>Booking</a>
-          <span class='divider'>/</span>
-        </li>
-        <li>
-          <a href='#rooms'>Rooms</a>
-          <span class='divider'>/</span>
-        </li>
-        <li class='active'>destroy</li>
-      </ul>
-
-      <div>
-          <h3>
-            <a href='#rooms-destroy'>
-              DELETE /rooms/:id
-            </a><br>
-            <small>{:method=>"DELETE", :path=>"/rooms/:id", :summary=>"Delete a room", :parameters=>[{:name=>"id", :description=>"Room ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the room has been deleted"}}}</small>
           </h3>
       </div>
 
@@ -1078,6 +915,169 @@
               DELETE /users/:id
             </a><br>
             <small>{:method=>"DELETE", :path=>"/users/:id", :summary=>"Delete a user", :parameters=>[{:name=>"id", :description=>"User ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the user has been deleted"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='vespas'>
+    <li><a href='#'>Booking</a><span class='divider'>/</span></li>
+    <li class='active'>Vespas</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#vespas'>Vespas</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='vespas-index'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#vespas'>Vespas</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#vespas-index'>
+              GET /vespas
+            </a><br>
+            <small>{:method=>"GET", :path=>"/espas", :summary=>"Get all espas", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all espas"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='vespas-show'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#vespas'>Vespas</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#vespas-show'>
+              GET /vespas/:id
+            </a><br>
+            <small>{:method=>"GET", :path=>"/espas/:id", :summary=>"Get a vespa by ID", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the vespa details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='vespas-create'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#vespas'>Vespas</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#vespas-create'>
+              POST /vespas
+            </a><br>
+            <small>{:method=>"POST", :path=>"/espas", :summary=>"Create a new vespa", :parameters=>[{:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created vespa details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='vespas-update'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#vespas'>Vespas</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#vespas-update'>
+              PATCH /vespas/:id
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/espas/:id", :summary=>"Update a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}, {:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated vespa details"}}}</small>
+          </h3>
+          <h3>
+            <a href='#vespas-update'>
+              PUT /vespas/:id
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/espas/:id", :summary=>"Update a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}, {:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated vespa details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='vespas-destroy'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#vespas'>Vespas</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#vespas-destroy'>
+              DELETE /vespas/:id
+            </a><br>
+            <small>{:method=>"DELETE", :path=>"/espas/:id", :summary=>"Delete a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the vespa has been deleted"}}}</small>
           </h3>
       </div>
 

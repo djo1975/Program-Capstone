@@ -38,7 +38,7 @@
     <h1>
       POST /comments
       <br>
-      <small>{:method=>"POST", :path=>"/comments", :summary=>"Create a new comment", :parameters=>[{:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :room_id=>{:type=>"Integer", :desc=>"Room ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created comment details"}}}</small>
+      <small>{:method=>"POST", :path=>"/comments", :summary=>"Create a new comment", :parameters=>[{:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created comment details"}}}</small>
     </h1>
   </div>
 
