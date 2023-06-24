@@ -23,22 +23,29 @@
     <span class='divider'>/</span>
   </li>
   <li>
-    <a href='../../apidoc/rooms.html'>
-      Rooms
+    <a href='../../apidoc/vespas.html'>
+      Vespas
       
     </a>
     <span class='divider'>/</span>
   </li>
-  <li class='active'>show</li>
+  <li class='active'>update</li>
   
 
 </ul>
 
   <div class='page-header'>
     <h1>
-      GET /rooms/:id
+      PATCH /vespas/:id
       <br>
-      <small>{:method=>"GET", :path=>"/rooms/:id", :summary=>"Get a room by ID", :parameters=>[{:name=>"id", :description=>"Room ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the room details"}}}</small>
+      <small>{:method=>"PUT", :path=>"/espas/:id", :summary=>"Update a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}, {:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated vespa details"}}}</small>
+    </h1>
+  </div>
+  <div class='page-header'>
+    <h1>
+      PUT /vespas/:id
+      <br>
+      <small>{:method=>"PUT", :path=>"/espas/:id", :summary=>"Update a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}, {:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated vespa details"}}}</small>
     </h1>
   </div>
 
