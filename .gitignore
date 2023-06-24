@@ -33,3 +33,5 @@ node_modules/
 /config/master.key
 /.env
 my_notes.txt
+
+/config/master.key

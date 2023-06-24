@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   protect_from_forgery with: :null_session, if: -> { request.format.json? }
   before_action :authenticate_request, unless: :sign_up_or_sign_in_request?
 
@@ -20,3 +21,4 @@ class ApplicationController < ActionController::Base
     render json: { error: 'Unauthorized' }, status: :unauthorized
   end
 end
+  
