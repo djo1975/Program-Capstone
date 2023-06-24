@@ -16,7 +16,8 @@ class CommentsController < ApplicationController
        })
   def index
     comments = Comment.all
-    render json: comments
+    comments_with_likes = comments.map { |comment| comment.as_json.merge(likes_count: comment.likes_count) }
+    render json: comments_with_likes
   end
 
   # GET /comments/:id
