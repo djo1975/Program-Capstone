@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_16_063545) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_24_171240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,8 +65,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_16_063545) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "icon"
-    t.string "description"
-    t.float "cost_per_day"
+    t.text "description"
+    t.decimal "cost_per_day"
   end
 
   add_foreign_key "comments", "users"
