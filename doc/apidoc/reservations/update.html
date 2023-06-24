@@ -38,14 +38,14 @@
     <h1>
       PATCH /reservations/:id
       <br>
-      <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :room_id=>{:type=>"Integer", :desc=>"Room ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
+      <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
     </h1>
   </div>
   <div class='page-header'>
     <h1>
       PUT /reservations/:id
       <br>
-      <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :room_id=>{:type=>"Integer", :desc=>"Room ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
+      <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
     </h1>
   </div>
 

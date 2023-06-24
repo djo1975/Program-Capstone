@@ -23,7 +23,7 @@
     <span class='divider'>/</span>
   </li>
   <li class='active'>
-    Rooms
+    Vespas
     
   </li>
   
@@ -31,7 +31,7 @@
 
 <div class='page-header'>
   <h1>
-    Rooms
+    Vespas
     <br>
     <small></small>
   </h1>
@@ -46,7 +46,7 @@
 
     <hr>
     <div class='pull-right small'>
-      <a href='../apidoc/rooms/index.html'> >>> </a>
+      <a href='../apidoc/vespas/index.html'> >>> </a>
     </div>
     <div>
         <h2>
@@ -54,10 +54,10 @@
            class='accordion-toggle'
            data-toggle='collapse'
            data-parent='#accordion'>
-            GET /rooms
+            GET /vespas
           </a>
           <br>
-          <small>{:method=>"GET", :path=>"/rooms", :summary=>"Get all rooms", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all rooms"}}}</small>
+          <small>{:method=>"GET", :path=>"/espas", :summary=>"Get all espas", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all espas"}}}</small>
         </h2>
     </div>
 
@@ -75,7 +75,7 @@
     </div>
     <hr>
     <div class='pull-right small'>
-      <a href='../apidoc/rooms/show.html'> >>> </a>
+      <a href='../apidoc/vespas/show.html'> >>> </a>
     </div>
     <div>
         <h2>
@@ -83,10 +83,10 @@
            class='accordion-toggle'
            data-toggle='collapse'
            data-parent='#accordion'>
-            GET /rooms/:id
+            GET /vespas/:id
           </a>
           <br>
-          <small>{:method=>"GET", :path=>"/rooms/:id", :summary=>"Get a room by ID", :parameters=>[{:name=>"id", :description=>"Room ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the room details"}}}</small>
+          <small>{:method=>"GET", :path=>"/espas/:id", :summary=>"Get a vespa by ID", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the vespa details"}}}</small>
         </h2>
     </div>
 
@@ -104,7 +104,7 @@
     </div>
     <hr>
     <div class='pull-right small'>
-      <a href='../apidoc/rooms/create.html'> >>> </a>
+      <a href='../apidoc/vespas/create.html'> >>> </a>
     </div>
     <div>
         <h2>
@@ -112,10 +112,10 @@
            class='accordion-toggle'
            data-toggle='collapse'
            data-parent='#accordion'>
-            POST /rooms
+            POST /vespas
           </a>
           <br>
-          <small>{:method=>"POST", :path=>"/rooms", :summary=>"Create a new room", :parameters=>[{:name=>"room", :description=>"Room parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Room name"}, :icon=>{:type=>"String", :desc=>"Room icon"}, :description=>{:type=>"String", :desc=>"Room description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Room cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created room details"}}}</small>
+          <small>{:method=>"POST", :path=>"/espas", :summary=>"Create a new vespa", :parameters=>[{:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created vespa details"}}}</small>
         </h2>
     </div>
 
@@ -133,7 +133,7 @@
     </div>
     <hr>
     <div class='pull-right small'>
-      <a href='../apidoc/rooms/update.html'> >>> </a>
+      <a href='../apidoc/vespas/update.html'> >>> </a>
     </div>
     <div>
         <h2>
@@ -141,20 +141,20 @@
            class='accordion-toggle'
            data-toggle='collapse'
            data-parent='#accordion'>
-            PATCH /rooms/:id
+            PATCH /vespas/:id
           </a>
           <br>
-          <small>{:method=>"PUT", :path=>"/rooms/:id", :summary=>"Update a room", :parameters=>[{:name=>"id", :description=>"Room ID", :required=>true, :type=>"Integer"}, {:name=>"room", :description=>"Room parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Room name"}, :icon=>{:type=>"String", :desc=>"Room icon"}, :description=>{:type=>"String", :desc=>"Room description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Room cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated room details"}}}</small>
+          <small>{:method=>"PUT", :path=>"/espas/:id", :summary=>"Update a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}, {:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated vespa details"}}}</small>
         </h2>
         <h2>
           <a href='#description-update'
            class='accordion-toggle'
            data-toggle='collapse'
            data-parent='#accordion'>
-            PUT /rooms/:id
+            PUT /vespas/:id
           </a>
           <br>
-          <small>{:method=>"PUT", :path=>"/rooms/:id", :summary=>"Update a room", :parameters=>[{:name=>"id", :description=>"Room ID", :required=>true, :type=>"Integer"}, {:name=>"room", :description=>"Room parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Room name"}, :icon=>{:type=>"String", :desc=>"Room icon"}, :description=>{:type=>"String", :desc=>"Room description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Room cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated room details"}}}</small>
+          <small>{:method=>"PUT", :path=>"/espas/:id", :summary=>"Update a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}, {:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated vespa details"}}}</small>
         </h2>
     </div>
 
@@ -172,7 +172,7 @@
     </div>
     <hr>
     <div class='pull-right small'>
-      <a href='../apidoc/rooms/destroy.html'> >>> </a>
+      <a href='../apidoc/vespas/destroy.html'> >>> </a>
     </div>
     <div>
         <h2>
@@ -180,10 +180,10 @@
            class='accordion-toggle'
            data-toggle='collapse'
            data-parent='#accordion'>
-            DELETE /rooms/:id
+            DELETE /vespas/:id
           </a>
           <br>
-          <small>{:method=>"DELETE", :path=>"/rooms/:id", :summary=>"Delete a room", :parameters=>[{:name=>"id", :description=>"Room ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the room has been deleted"}}}</small>
+          <small>{:method=>"DELETE", :path=>"/espas/:id", :summary=>"Delete a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the vespa has been deleted"}}}</small>
         </h2>
     </div>
 

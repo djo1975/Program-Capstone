@@ -59,19 +59,19 @@
             <td>
               <a href='./apidoc/comments/create.html'>POST /comments</a>
             </td>
-            <td width='60%'>{:method=&gt;&quot;POST&quot;, :path=&gt;&quot;/comments&quot;, :summary=&gt;&quot;Create a new comment&quot;, :parameters=&gt;[{:name=&gt;&quot;comment&quot;, :description=&gt;&quot;Comment parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :room_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Room ID&quot;}, :content=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Comment content&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the created comment details&quot;}}}</td>
+            <td width='60%'>{:method=&gt;&quot;POST&quot;, :path=&gt;&quot;/comments&quot;, :summary=&gt;&quot;Create a new comment&quot;, :parameters=&gt;[{:name=&gt;&quot;comment&quot;, :description=&gt;&quot;Comment parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :vespa_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Vespa ID&quot;}, :content=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Comment content&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the created comment details&quot;}}}</td>
           </tr>
           <tr>
             <td>
               <a href='./apidoc/comments/update.html'>PATCH /comments/:id</a>
             </td>
-            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/comments/:id&quot;, :summary=&gt;&quot;Update a comment&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Comment ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;comment&quot;, :description=&gt;&quot;Comment parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :room_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Room ID&quot;}, :content=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Comment content&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated comment details&quot;}}}</td>
+            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/comments/:id&quot;, :summary=&gt;&quot;Update a comment&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Comment ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;comment&quot;, :description=&gt;&quot;Comment parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :vespa_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Vespa ID&quot;}, :content=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Comment content&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated comment details&quot;}}}</td>
           </tr>
           <tr>
             <td>
               <a href='./apidoc/comments/update.html'>PUT /comments/:id</a>
             </td>
-            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/comments/:id&quot;, :summary=&gt;&quot;Update a comment&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Comment ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;comment&quot;, :description=&gt;&quot;Comment parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :room_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Room ID&quot;}, :content=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Comment content&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated comment details&quot;}}}</td>
+            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/comments/:id&quot;, :summary=&gt;&quot;Update a comment&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Comment ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;comment&quot;, :description=&gt;&quot;Comment parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :vespa_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Vespa ID&quot;}, :content=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Comment content&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated comment details&quot;}}}</td>
           </tr>
           <tr>
             <td>
@@ -229,78 +229,25 @@
             <td>
               <a href='./apidoc/reservations/create.html'>POST /reservations</a>
             </td>
-            <td width='60%'>{:method=&gt;&quot;POST&quot;, :path=&gt;&quot;/reservations&quot;, :summary=&gt;&quot;Create a new reservation&quot;, :parameters=&gt;[{:name=&gt;&quot;reservation&quot;, :description=&gt;&quot;Reservation parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:start_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation start date&quot;}, :end_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation end date&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Reservation description&quot;}, :user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :room_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Room ID&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the created reservation details&quot;}}}</td>
+            <td width='60%'>{:method=&gt;&quot;POST&quot;, :path=&gt;&quot;/reservations&quot;, :summary=&gt;&quot;Create a new reservation&quot;, :parameters=&gt;[{:name=&gt;&quot;reservation&quot;, :description=&gt;&quot;Reservation parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:start_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation start date&quot;}, :end_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation end date&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Reservation description&quot;}, :user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :vespa_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Vespa ID&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the created reservation details&quot;}}}</td>
           </tr>
           <tr>
             <td>
               <a href='./apidoc/reservations/update.html'>PATCH /reservations/:id</a>
             </td>
-            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/reservations/:id&quot;, :summary=&gt;&quot;Update a reservation&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Reservation ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;reservation&quot;, :description=&gt;&quot;Reservation parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:start_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation start date&quot;}, :end_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation end date&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Reservation description&quot;}, :user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :room_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Room ID&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated reservation details&quot;}}}</td>
+            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/reservations/:id&quot;, :summary=&gt;&quot;Update a reservation&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Reservation ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;reservation&quot;, :description=&gt;&quot;Reservation parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:start_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation start date&quot;}, :end_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation end date&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Reservation description&quot;}, :user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :vespa_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Vespa ID&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated reservation details&quot;}}}</td>
           </tr>
           <tr>
             <td>
               <a href='./apidoc/reservations/update.html'>PUT /reservations/:id</a>
             </td>
-            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/reservations/:id&quot;, :summary=&gt;&quot;Update a reservation&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Reservation ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;reservation&quot;, :description=&gt;&quot;Reservation parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:start_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation start date&quot;}, :end_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation end date&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Reservation description&quot;}, :user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :room_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Room ID&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated reservation details&quot;}}}</td>
+            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/reservations/:id&quot;, :summary=&gt;&quot;Update a reservation&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Reservation ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;reservation&quot;, :description=&gt;&quot;Reservation parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:start_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation start date&quot;}, :end_date=&gt;{:type=&gt;&quot;Date&quot;, :desc=&gt;&quot;Reservation end date&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Reservation description&quot;}, :user_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;User ID&quot;}, :vespa_id=&gt;{:type=&gt;&quot;Integer&quot;, :desc=&gt;&quot;Vespa ID&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated reservation details&quot;}}}</td>
           </tr>
           <tr>
             <td>
               <a href='./apidoc/reservations/destroy.html'>DELETE /reservations/:id</a>
             </td>
             <td width='60%'>{:method=&gt;&quot;DELETE&quot;, :path=&gt;&quot;/reservations/:id&quot;, :summary=&gt;&quot;Delete a reservation&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Reservation ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response indicating the reservation has been deleted&quot;}}}</td>
-          </tr>
-    </tbody>
-  </table>
-  <h2>
-    <a href='./apidoc/rooms.html'>
-      Rooms
-    </a>
-    <br>
-    <small></small>
-  </h2>
-  <table class='table'>
-    <thead>
-      <tr>
-        <th>Resource</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-          <tr>
-            <td>
-              <a href='./apidoc/rooms/index.html'>GET /rooms</a>
-            </td>
-            <td width='60%'>{:method=&gt;&quot;GET&quot;, :path=&gt;&quot;/rooms&quot;, :summary=&gt;&quot;Get all rooms&quot;, :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with all rooms&quot;}}}</td>
-          </tr>
-          <tr>
-            <td>
-              <a href='./apidoc/rooms/show.html'>GET /rooms/:id</a>
-            </td>
-            <td width='60%'>{:method=&gt;&quot;GET&quot;, :path=&gt;&quot;/rooms/:id&quot;, :summary=&gt;&quot;Get a room by ID&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Room ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the room details&quot;}}}</td>
-          </tr>
-          <tr>
-            <td>
-              <a href='./apidoc/rooms/create.html'>POST /rooms</a>
-            </td>
-            <td width='60%'>{:method=&gt;&quot;POST&quot;, :path=&gt;&quot;/rooms&quot;, :summary=&gt;&quot;Create a new room&quot;, :parameters=&gt;[{:name=&gt;&quot;room&quot;, :description=&gt;&quot;Room parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:name=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Room name&quot;}, :icon=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Room icon&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Room description&quot;}, :cost_per_day=&gt;{:type=&gt;&quot;Numeric&quot;, :desc=&gt;&quot;Room cost per day&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the created room details&quot;}}}</td>
-          </tr>
-          <tr>
-            <td>
-              <a href='./apidoc/rooms/update.html'>PATCH /rooms/:id</a>
-            </td>
-            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/rooms/:id&quot;, :summary=&gt;&quot;Update a room&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Room ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;room&quot;, :description=&gt;&quot;Room parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:name=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Room name&quot;}, :icon=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Room icon&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Room description&quot;}, :cost_per_day=&gt;{:type=&gt;&quot;Numeric&quot;, :desc=&gt;&quot;Room cost per day&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated room details&quot;}}}</td>
-          </tr>
-          <tr>
-            <td>
-              <a href='./apidoc/rooms/update.html'>PUT /rooms/:id</a>
-            </td>
-            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/rooms/:id&quot;, :summary=&gt;&quot;Update a room&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Room ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;room&quot;, :description=&gt;&quot;Room parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:name=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Room name&quot;}, :icon=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Room icon&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Room description&quot;}, :cost_per_day=&gt;{:type=&gt;&quot;Numeric&quot;, :desc=&gt;&quot;Room cost per day&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated room details&quot;}}}</td>
-          </tr>
-          <tr>
-            <td>
-              <a href='./apidoc/rooms/destroy.html'>DELETE /rooms/:id</a>
-            </td>
-            <td width='60%'>{:method=&gt;&quot;DELETE&quot;, :path=&gt;&quot;/rooms/:id&quot;, :summary=&gt;&quot;Delete a room&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Room ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response indicating the room has been deleted&quot;}}}</td>
           </tr>
     </tbody>
   </table>
@@ -395,6 +342,59 @@
               <a href='./apidoc/users/destroy.html'>DELETE /users/:id</a>
             </td>
             <td width='60%'>{:method=&gt;&quot;DELETE&quot;, :path=&gt;&quot;/users/:id&quot;, :summary=&gt;&quot;Delete a user&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;User ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response indicating the user has been deleted&quot;}}}</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='./apidoc/vespas.html'>
+      Vespas
+    </a>
+    <br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./apidoc/vespas/index.html'>GET /vespas</a>
+            </td>
+            <td width='60%'>{:method=&gt;&quot;GET&quot;, :path=&gt;&quot;/espas&quot;, :summary=&gt;&quot;Get all espas&quot;, :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with all espas&quot;}}}</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./apidoc/vespas/show.html'>GET /vespas/:id</a>
+            </td>
+            <td width='60%'>{:method=&gt;&quot;GET&quot;, :path=&gt;&quot;/espas/:id&quot;, :summary=&gt;&quot;Get a vespa by ID&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Vespa ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the vespa details&quot;}}}</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./apidoc/vespas/create.html'>POST /vespas</a>
+            </td>
+            <td width='60%'>{:method=&gt;&quot;POST&quot;, :path=&gt;&quot;/espas&quot;, :summary=&gt;&quot;Create a new vespa&quot;, :parameters=&gt;[{:name=&gt;&quot;vespa&quot;, :description=&gt;&quot;Vespa parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:name=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Vespa name&quot;}, :icon=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Vespa icon&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Vespa description&quot;}, :cost_per_day=&gt;{:type=&gt;&quot;Numeric&quot;, :desc=&gt;&quot;Vespa cost per day&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the created vespa details&quot;}}}</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./apidoc/vespas/update.html'>PATCH /vespas/:id</a>
+            </td>
+            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/espas/:id&quot;, :summary=&gt;&quot;Update a vespa&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Vespa ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;vespa&quot;, :description=&gt;&quot;Vespa parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:name=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Vespa name&quot;}, :icon=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Vespa icon&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Vespa description&quot;}, :cost_per_day=&gt;{:type=&gt;&quot;Numeric&quot;, :desc=&gt;&quot;Vespa cost per day&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated vespa details&quot;}}}</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./apidoc/vespas/update.html'>PUT /vespas/:id</a>
+            </td>
+            <td width='60%'>{:method=&gt;&quot;PUT&quot;, :path=&gt;&quot;/espas/:id&quot;, :summary=&gt;&quot;Update a vespa&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Vespa ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}, {:name=&gt;&quot;vespa&quot;, :description=&gt;&quot;Vespa parameters&quot;, :required=&gt;true, :type=&gt;&quot;Hash&quot;, :properties=&gt;{:name=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Vespa name&quot;}, :icon=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Vespa icon&quot;}, :description=&gt;{:type=&gt;&quot;String&quot;, :desc=&gt;&quot;Vespa description&quot;}, :cost_per_day=&gt;{:type=&gt;&quot;Numeric&quot;, :desc=&gt;&quot;Vespa cost per day&quot;}}}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response with the updated vespa details&quot;}}}</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./apidoc/vespas/destroy.html'>DELETE /vespas/:id</a>
+            </td>
+            <td width='60%'>{:method=&gt;&quot;DELETE&quot;, :path=&gt;&quot;/espas/:id&quot;, :summary=&gt;&quot;Delete a vespa&quot;, :parameters=&gt;[{:name=&gt;&quot;id&quot;, :description=&gt;&quot;Vespa ID&quot;, :required=&gt;true, :type=&gt;&quot;Integer&quot;}], :response=&gt;{:body=&gt;{:status=&gt;&quot;JSON&quot;, :desc=&gt;&quot;JSON response indicating the vespa has been deleted&quot;}}}</td>
           </tr>
     </tbody>
   </table>
