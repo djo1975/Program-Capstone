@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe LikesController, type: :controller do
   let(:user) { User.create(username: 'john_doe') }
-  let(:room) { Room.create(name: 'Room Name', icon: 'icon.png', cost_per_day: 100) }
-  let(:comment) { Comment.create(user:, room:, content: 'Ovo je komentar', room_id: room.id) }
+  let(:vespa) { Vespa.create(name: 'Vespa Name', icon: 'icon.png', cost_per_day: 100) }
+  let(:comment) { Comment.create(user:, vespa:, content: 'Ovo je komentar', vespa_id: vespa.id) }
   let!(:like) { Like.create(user:, comment:) }
 
   describe 'POST #create' do

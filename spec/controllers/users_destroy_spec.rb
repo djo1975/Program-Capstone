@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   describe 'DELETE #destroy' do
     let(:user) { User.create(username: 'john_doe') }
-    let(:room) { Room.create(name: 'Room 1', icon: 'icon.png', cost_per_day: 100, description: 'Ovo je opis sobe 1') }
-    let!(:reservation) { Reservation.create(user:, room:, start_date: Date.today, end_date: Date.today + 1, description: 'Moja rezervacija') }
-    let!(:comment) { Comment.create(user:, room:, content: 'Ovo je komentar') }
+    let(:vespa) { Vespa.create(name: 'Vespa 1', icon: 'icon.png', cost_per_day: 100, description: 'Ovo je opis sobe 1') }
+    let!(:reservation) { Reservation.create(user:, vespa:, start_date: Date.today, end_date: Date.today + 1, description: 'Moja rezervacija') }
+    let!(:comment) { Comment.create(user:, vespa:, content: 'Ovo je komentar') }
     let!(:like) { Like.create(user:, comment:) }
 
     it 'destroys the user and associated objects' do

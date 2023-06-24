@@ -3,28 +3,28 @@ require 'rails_helper'
 RSpec.describe CommentsController, type: :controller do
   describe 'POST #create' do
     let(:user) { User.create(username: 'john_doe') }
-    let(:room) { Room.create(name: 'Soba 1', icon: 'icon.png', description: 'Ovo je opis sobe 1', cost_per_day: 100.0) }
+    let(:vespa) { Vespa.create(name: 'Soba 1', icon: 'icon.png', description: 'Ovo je opis sobe 1', cost_per_day: 100.0) }
 
     context 'with valid parameters' do
       it 'creates a new comment' do
-        post :create, params: { comment: { content: 'Ovo je komentar', user_id: user.id, room_id: room.id } }
+        post :create, params: { comment: { content: 'Ovo je komentar', user_id: user.id, vespa_id: vespa.id } }
         expect(Comment.count).to eq(1)
       end
 
       it 'returns a successful response' do
-        post :create, params: { comment: { content: 'Ovo je komentar', user_id: user.id, room_id: room.id } }
+        post :create, params: { comment: { content: 'Ovo je komentar', user_id: user.id, vespa_id: vespa.id } }
         expect(response).to have_http_status(:created)
       end
     end
 
     context 'with invalid parameters' do
       it 'does not create a new comment' do
-        post :create, params: { comment: { content: '', user_id: user.id, room_id: room.id } }
+        post :create, params: { comment: { content: '', user_id: user.id, vespa_id: vespa.id } }
         expect(Comment.count).to eq(0)
       end
 
       it 'returns an error response' do
-        post :create, params: { comment: { content: '', user_id: user.id, room_id: room.id } }
+        post :create, params: { comment: { content: '', user_id: user.id, vespa_id: vespa.id } }
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
@@ -32,8 +32,8 @@ RSpec.describe CommentsController, type: :controller do
 
   describe 'DELETE #destroy' do
     let(:user) { User.create(username: 'john_doe') }
-    let(:room) { Room.create(name: 'Soba 1', icon: 'icon.png', description: 'Ovo je opis sobe 1', cost_per_day: 100.0) }
-    let!(:comment) { Comment.create(content: 'Ovo je komentar', user_id: user.id, room_id: room.id) }
+    let(:vespa) { Vespa.create(name: 'Soba 1', icon: 'icon.png', description: 'Ovo je opis sobe 1', cost_per_day: 100.0) }
+    let!(:comment) { Comment.create(content: 'Ovo je komentar', user_id: user.id, vespa_id: vespa.id) }
 
     it 'destroys the comment' do
       expect do

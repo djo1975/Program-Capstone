@@ -1,11 +1,11 @@
 RSpec.describe ReservationsController, type: :controller do
   let(:user) { User.create(username: 'John Doe') }
-  let(:room) { Room.create(name: 'Room 1', icon: 'icon.png', cost_per_day: 100, description: 'Ovo je opis sobe 1') }
-  let!(:reservation) { Reservation.create(user_id: user.id, room_id: room.id, start_date: Date.today, end_date: Date.today + 1, description: 'Moja rezervacija') }
+  let(:vespa) { Vespa.create(name: 'Vespa 1', icon: 'icon.png', cost_per_day: 100, description: 'Ovo je opis sobe 1') }
+  let!(:reservation) { Reservation.create(user_id: user.id, vespa_id: vespa.id, start_date: Date.today, end_date: Date.today + 1, description: 'Moja rezervacija') }
 
   describe 'POST #create' do
     context 'with valid parameters' do
-      let(:valid_params) { { reservation: { user_id: user.id, room_id: room.id, start_date: Date.today, end_date: Date.today + 1, description: 'Moja rezervacija' } } }
+      let(:valid_params) { { reservation: { user_id: user.id, vespa_id: vespa.id, start_date: Date.today, end_date: Date.today + 1, description: 'Moja rezervacija' } } }
 
       it 'creates a new reservation' do
         expect do
@@ -20,7 +20,7 @@ RSpec.describe ReservationsController, type: :controller do
     end
 
     context 'with invalid parameters' do
-      let(:invalid_params) { { reservation: { user_id: user.id, room_id: room.id } } }
+      let(:invalid_params) { { reservation: { user_id: user.id, vespa_id: vespa.id } } }
 
       it 'does not create a new reservation' do
         expect do

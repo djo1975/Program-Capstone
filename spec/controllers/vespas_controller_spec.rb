@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe RoomsController, type: :controller do
+RSpec.describe VespasController, type: :controller do
   describe 'POST #create' do
     context 'with valid parameters' do
       let(:valid_params) do
         {
-          room: {
+          vespa: {
             name: 'Soba 1',
             icon: 'icon.png',
             description: 'Ovo je opis sobe 1',
@@ -14,10 +14,10 @@ RSpec.describe RoomsController, type: :controller do
         }
       end
 
-      it 'creates a new room' do
+      it 'creates a new vespa' do
         expect do
           post :create, params: valid_params
-        end.to change(Room, :count).by(1)
+        end.to change(Vespa, :count).by(1)
       end
 
       it 'returns a successful response' do
@@ -29,7 +29,7 @@ RSpec.describe RoomsController, type: :controller do
     context 'with invalid parameters' do
       let(:invalid_params) do
         {
-          room: {
+          vespa: {
             name: '',
             icon: 'icon.png',
             description: 'Ovo je opis sobe 1',
@@ -38,10 +38,10 @@ RSpec.describe RoomsController, type: :controller do
         }
       end
 
-      it 'does not create a new room' do
+      it 'does not create a new vespa' do
         expect do
           post :create, params: invalid_params
-        end.not_to change(Room, :count)
+        end.not_to change(Vespa, :count)
       end
 
       it 'returns an error response' do
@@ -52,16 +52,16 @@ RSpec.describe RoomsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    let!(:room) { Room.create(name: 'Soba 1', icon: 'icon.png', description: 'Ovo je opis sobe 1', cost_per_day: 100.0) }
+    let!(:vespa) { Vespa.create(name: 'Soba 1', icon: 'icon.png', description: 'Ovo je opis sobe 1', cost_per_day: 100.0) }
 
-    it 'destroys the room' do
+    it 'destroys the vespa' do
       expect do
-        delete :destroy, params: { id: room.id }
-      end.to change(Room, :count).by(-1)
+        delete :destroy, params: { id: vespa.id }
+      end.to change(Vespa, :count).by(-1)
     end
 
     it 'returns a successful response' do
-      delete :destroy, params: { id: room.id }
+      delete :destroy, params: { id: vespa.id }
       expect(response).to have_http_status(:no_content)
     end
   end
