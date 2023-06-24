@@ -16,8 +16,9 @@ class VespasController < ApplicationController
          response: { body: { status: 'JSON', desc: 'JSON response with all espas' } }
        })
   def index
-    @espas = Vespa.all
-    render json: @espas
+    vespas = Vespa.all
+    vespas_with_comments = vespas.map { |vespa| vespa.as_json.merge(comments_count: vespa.comments_count) }
+    render json: vespas_with_comments
   end
 
   # GET /espas/:id
