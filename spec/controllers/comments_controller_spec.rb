@@ -37,6 +37,18 @@ RSpec.describe CommentsController, type: :controller do
     end
   end
 
+  describe 'GET #index' do
+    before do
+      post :create, params: { comment: { user_id: @user.id, vespa_id: @vespa.id, content: 'comment1' } }
+      @comment = Comment.last
+    end
+
+    it 'returns all comments' do
+      get :index
+      expect(response.body).to eq([@comment].to_json)
+    end
+  end
+
   describe 'PUT #update' do
     before do
       post :create, params: { comment: { user_id: @user.id, vespa_id: @vespa.id, content: 'comment1' } }
