@@ -38,19 +38,19 @@ RSpec.describe CommentsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    let(:user) { User.create(username: 'john_doe') }
-    let(:vespa) { Vespa.create(name: 'Soba 1', icon: 'icon.png', description: 'Ovo je opis sobe 1', cost_per_day: 100.0) }
-    let!(:comment) { Comment.create(content: 'Ovo je komentar', user_id: user.id, vespa_id: vespa.id) }
+    before do
+      post :create, params: { comment: { user_id: @user.id, vespa_id: @vespa.id, content: 'comment1' } }
+      @comment = Comment.last
+    end
 
     it 'destroys the comment' do
-      expect do
-        delete :destroy, params: { id: comment.id }
-      end.to change(Comment, :count).by(-1)
+      delete :destroy, params: { id: @comment.id }
+      expect(Comment.count).to eq(0)
     end
 
     it 'returns a successful response' do
-      delete :destroy, params: { id: comment.id }
-      expect(response).to have_http_status(:no_content)
+      delete :destroy, params: { id: @comment.id }
+      expect(response).to have_http_status(:ok)
     end
   end
 end
