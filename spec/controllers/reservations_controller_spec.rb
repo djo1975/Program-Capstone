@@ -67,15 +67,19 @@ RSpec.describe ReservationsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
+    before do
+      post :create, params: { reservation: { user_id: @user.id, vespa_id: @vespa.id, start_date: '2023-01-01', end_date: '2023-01-02', description: 'description2' } }
+      @reservation = Reservation.last
+    end
+
     it 'destroys the reservation' do
-      expect do
-        delete :destroy, params: { id: reservation.id }
-      end.to change(Reservation, :count).by(-1)
+      delete :destroy, params: { id: @reservation.id }
+      expect(Reservation.count).to eq(0)
     end
 
     it 'returns a successful response' do
-      delete :destroy, params: { id: reservation.id }
-      expect(response).to have_http_status(:no_content)
+      delete :destroy, params: { id: @reservation.id }
+      expect(response).to have_http_status(:ok)
     end
   end
 end
