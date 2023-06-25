@@ -38,16 +38,32 @@ RSpec.describe LikesController, type: :controller do
     end
   end
 
+  describe 'GET #index' do
+    before do
+      post :create, params: { like: { user_id: @user.id, comment_id: @comment.id } }
+      @like = Like.last
+    end
+
+    it 'returns all the likes' do
+      get :index
+      expect(assigns(:likes)).to eq([@like])
+    end
+  end
+
   describe 'DELETE #destroy' do
+    before do
+      post :create, params: { like: { user_id: @user.id, comment_id: @comment.id } }
+      @like = Like.last
+    end
+
     it 'destroys the like' do
-      expect do
-        delete :destroy, params: { id: like.id }
-      end.to change(Like, :count).by(-1)
+      delete :destroy, params: { id: @like.id }
+      expect(Like.count).to eq(0)
     end
 
     it 'returns a successful response' do
-      delete :destroy, params: { id: like.id }
-      expect(response).to have_http_status(:no_content)
+      delete :destroy, params: { id: @like.id }
+      expect(response).to have_http_status(:ok)
     end
   end
 end
