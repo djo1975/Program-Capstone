@@ -37,6 +37,23 @@ RSpec.describe CommentsController, type: :controller do
     end
   end
 
+  describe 'PUT #update' do
+    before do
+      post :create, params: { comment: { user_id: @user.id, vespa_id: @vespa.id, content: 'comment1' } }
+      @comment = Comment.last
+    end
+
+    it 'updates the comment' do
+      put :update, params: { id: @comment.id, comment: { content: 'comment2' } }
+      expect(Comment.last.content).to eq('comment2')
+    end
+
+    it 'returns a successful response' do
+      put :update, params: { id: @comment.id, comment: { content: 'comment2' } }
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
   describe 'DELETE #destroy' do
     before do
       post :create, params: { comment: { user_id: @user.id, vespa_id: @vespa.id, content: 'comment1' } }
