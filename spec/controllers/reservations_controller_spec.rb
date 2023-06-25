@@ -36,7 +36,36 @@ RSpec.describe ReservationsController, type: :controller do
       end
     end
   end
-  
+
+  describe 'GET #index' do
+    before do
+      post :create, params: { reservation: { user_id: @user.id, vespa_id: @vespa.id, start_date: '2023-01-01', end_date: '2023-01-02', description: 'description2' } }
+      @reservation = Reservation.last
+    end
+
+    it 'returns all reservations' do
+      get :index
+      expect(response.body).to eq([@reservation].to_json)
+    end
+  end
+
+  describe 'PUT #update' do
+    before do
+      post :create, params: { reservation: { user_id: @user.id, vespa_id: @vespa.id, start_date: '2023-01-01', end_date: '2023-01-02', description: 'description2' } }
+      @reservation = Reservation.last
+    end
+
+    it 'updates the reservation' do
+      put :update, params: { id: @reservation.id, reservation: { user_id: @user.id, vespa_id: @vespa.id, start_date: '2023-01-01', end_date: '2023-01-02', description: 'description3' } }
+      expect(Reservation.last.description).to eq('description3')
+    end
+
+    it 'returns a successful response' do
+      put :update, params: { id: @reservation.id, reservation: { user_id: @user.id, vespa_id: @vespa.id, start_date: '2023-01-01', end_date: '2023-01-02', description: 'description3' } }
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
   describe 'DELETE #destroy' do
     it 'destroys the reservation' do
       expect do
