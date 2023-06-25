@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  skip_before_action :authenticate_request, only: [:create]
   include Apipie::DSL
 
   respond_to :json
