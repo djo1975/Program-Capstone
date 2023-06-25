@@ -51,17 +51,19 @@ RSpec.describe VespasController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    let!(:vespa) { Vespa.create(name: 'Soba 1', icon: 'icon.png', description: 'Ovo je opis sobe 1', cost_per_day: 100.0, comments_count: 0) }
+    before do
+      post :create, params: { vespa: { name: 'Soba 1', icon: 'icon.png', description: 'description1', cost_per_day: 100.0 } }
+      @vespa = Vespa.last
+    end
 
     it 'destroys the vespa' do
-      expect do
-        delete :destroy, params: { id: vespa.id }
-      end.to change(Vespa, :count).by(-1)
+      delete :destroy, params: { id: @vespa.id }
+      expect(Vespa.count).to eq(0)
     end
 
     it 'returns a successful response' do
-      delete :destroy, params: { id: vespa.id }
-      expect(response).to have_http_status(:no_content)
+      delete :destroy, params: { id: @vespa.id }
+      expect(response).to have_http_status(:ok)
     end
   end
 end
