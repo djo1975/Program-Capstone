@@ -36,8 +36,22 @@ RSpec.describe VespasController, type: :controller do
     end
   end
 
+  describe 'GET #index' do
+    before do
+      post :create, params: { vespa: { name: 'Soba 1', icon: 'icon.png', description: 'description1', cost_per_day: 100.0 } }
+      @vespa = Vespa.last
+    end
+
+    it 'returns all vespas' do
+      get :index
+      actual_response = JSON.parse(response.body)
+      actual_response.each { |vespa| vespa.delete('comments_count') }
+      expect(actual_response.to_json).to eq([@vespa].to_json)
+    end
+  end
+
   describe 'DELETE #destroy' do
-    let!(:vespa) { Vespa.create(name: 'Soba 1', icon: 'icon.png', description: 'Ovo je opis sobe 1', cost_per_day: 100.0) }
+    let!(:vespa) { Vespa.create(name: 'Soba 1', icon: 'icon.png', description: 'Ovo je opis sobe 1', cost_per_day: 100.0, comments_count: 0) }
 
     it 'destroys the vespa' do
       expect do
