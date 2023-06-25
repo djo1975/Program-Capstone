@@ -1,51 +1,36 @@
+require 'devise'
 require 'rails_helper'
 
 RSpec.describe VespasController, type: :controller do
+  include Devise::Test::ControllerHelpers
+
+  before do
+    @request.env['devise.mapping'] = Devise.mappings[:user]
+    @user = User.create(id: 1, username: 'user1', email: 'user1@test.com', password: 'password', password_confirmation: 'password', jti: 'user_token')
+    request.headers['Authorization'] = @user.jti
+  end
+
   describe 'POST #create' do
     context 'with valid parameters' do
-      let(:valid_params) do
-        {
-          vespa: {
-            name: 'Soba 1',
-            icon: 'icon.png',
-            description: 'Ovo je opis sobe 1',
-            cost_per_day: 100.0
-          }
-        }
-      end
-
       it 'creates a new vespa' do
-        expect do
-          post :create, params: valid_params
-        end.to change(Vespa, :count).by(1)
+        post :create, params: { vespa: { name: 'Soba 1', icon: 'icon.png', description: 'description1', cost_per_day: 100.0 } }
+        expect(Vespa.count).to eq(1)
       end
 
       it 'returns a successful response' do
-        post :create, params: valid_params
+        post :create, params: { vespa: { name: 'Soba 1', icon: 'icon.png', description: 'description1', cost_per_day: 100.0 } }
         expect(response).to have_http_status(:created)
       end
     end
 
     context 'with invalid parameters' do
-      let(:invalid_params) do
-        {
-          vespa: {
-            name: '',
-            icon: 'icon.png',
-            description: 'Ovo je opis sobe 1',
-            cost_per_day: 100.0
-          }
-        }
-      end
-
       it 'does not create a new vespa' do
-        expect do
-          post :create, params: invalid_params
-        end.not_to change(Vespa, :count)
+        post :create, params: { vespa: { name: '', icon: 'icon.png', description: 'description1', cost_per_day: 100.0 } }
+        expect(Vespa.count).to eq(0)
       end
 
       it 'returns an error response' do
-        post :create, params: invalid_params
+        post :create, params: { vespa: { name: '', icon: 'icon.png', description: 'description1', cost_per_day: 100.0 } }
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
