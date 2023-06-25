@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe ReservationsController, type: :controller do
   include Devise::Test::ControllerHelpers
-  
+
   before do
     @request.env['devise.mapping'] = Devise.mappings[:user]
     @user = User.create(id: 1, username: 'user1', email: 'user1@test.com', password: 'password', password_confirmation: 'password', jti: 'user_token')
