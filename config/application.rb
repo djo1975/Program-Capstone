@@ -18,6 +18,9 @@ module Booking
         resource '*', headers: :any, methods: %i[get post put patch delete options head]
       end
     end
+
+    config.middleware.use Warden::Manager
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
