@@ -68,10 +68,12 @@ class PasswordsController < Devise::PasswordsController
          response: { body: { status: 'JSON', desc: 'JSON response with status and message' } }
        })
   def update
-    self.resource = resource_class.reset_password_by_token(params[:user])
+    self.resource = resource_class.find_by(reset_password_token: params[:user][:reset_password_token])
+    return unless resource&.reset_password_period_valid?
 
+    resource.reset_password(params[:user][:password], params[:user][:password_confirmation])
     if resource.errors.empty?
-      sign_in(resource)
+      sign_in(resource_name, resource)
       render json: { message: 'Password successfully reset' }, status: :ok
     else
       render json: { error: resource.errors.full_messages }, status: :unprocessable_entity
