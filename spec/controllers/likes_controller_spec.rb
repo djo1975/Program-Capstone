@@ -46,7 +46,7 @@ RSpec.describe LikesController, type: :controller do
 
     it 'returns all the likes' do
       get :index
-      expect(assigns(:likes)).to eq([@like])
+      expect(response.body).to eq([@like].to_json)
     end
   end
 
