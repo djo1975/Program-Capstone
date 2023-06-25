@@ -1,4 +1,5 @@
 class SessionsController < Devise::SessionsController
+  skip_before_action :authenticate_request
   include Apipie::DSL
 
   respond_to :json
@@ -31,7 +32,7 @@ class SessionsController < Devise::SessionsController
          response: { body: { status: 'JSON', desc: 'JSON response with status, message, user, and token' } }
        })
   def create
-    self.resource = warden.authenticate!(auth_options)
+    self.resource = warden.authenticate(auth_options)
     if resource
       sign_in(resource_name, resource)
       token = resource.generate_jwt
