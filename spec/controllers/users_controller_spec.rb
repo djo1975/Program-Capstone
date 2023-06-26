@@ -1,46 +1,44 @@
+require 'devise'
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  describe 'POST #create' do
-    context 'with valid parameters' do
-      it 'creates a new user' do
-        expect do
-          post :create, params: { user: { username: 'john_doe' } }
-        end.to change(User, :count).by(1)
-      end
+  include Devise::Test::ControllerHelpers
 
-      it 'returns a successful response' do
-        post :create, params: { user: { username: 'john_doe' } }
-        expect(response).to be_successful
-      end
-    end
+  before do
+    @request.env['devise.mapping'] = Devise.mappings[:user]
+    @user = User.create(id: 1, username: 'user1', email: 'user1@test.com', password: 'password', password_confirmation: 'password', jti: 'user_token')
+    @vespa = Vespa.create(id: 1, name: 'vespa1', icon: 'icon.png', description: 'description1', cost_per_day: 100.0)
+    @comment = Comment.create(id: 1, user_id: @user.id, vespa_id: @vespa.id, content: 'comment1')
+    @like = Like.create(id: 1, user_id: @user.id, comment_id: @comment.id)
+    request.headers['Authorization'] = @user.jti
+  end
 
-    context 'with invalid parameters' do
-      it 'does not create a new user' do
-        expect do
-          post :create, params: { user: { username: '' } }
-        end.not_to change(User, :count)
-      end
-
-      it 'returns an error response' do
-        post :create, params: { user: { username: '' } }
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
+  describe 'GET #index' do
+    it 'returns all users' do
+      get :index
+      expect(response.body).to eq([@user].to_json)
     end
   end
 
   describe 'DELETE #destroy' do
-    let!(:user) { User.create(username: 'john_doe') }
-
     it 'destroys the user' do
-      expect do
-        delete :destroy, params: { id: user.id }
-      end.to change(User, :count).by(-1)
+      delete :destroy, params: { id: @user.id }
+      expect(User.count).to eq(0)
     end
 
     it 'returns a successful response' do
-      delete :destroy, params: { id: user.id }
+      delete :destroy, params: { id: @user.id }
       expect(response).to have_http_status(:no_content)
+    end
+
+    it 'destroys all comments by the user' do
+      delete :destroy, params: { id: @user.id }
+      expect(Comment.count).to eq(0)
+    end
+
+    it 'destroys all likes by the user' do
+      delete :destroy, params: { id: @user.id }
+      expect(Like.count).to eq(0)
     end
   end
 end
