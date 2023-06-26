@@ -16,7 +16,7 @@ The main features of this website are:
  - Users can add their own Vespas and remove them if they want to.
 
 ## Database Structure:
-<img src="" width="650">
+<img src="https://github.com/djo1975/Program-Capstone/assets/96848068/2ed79992-db0e-44a9-a350-beaa13398486" width="650">
 
 ## Project Documentation 📄
 
