@@ -122,7 +122,7 @@ $ rspec
 
 - GitHub: [@Ilic](https://github.com/djo1975)
 - Twitter: [@Ilic](https://twitter.com/MladanIlic)
-- LinkedIn: [@Ilic] (https://www.linkedin.com/in/mladanilic/)
+- LinkedIn: [@Ilic](https://www.linkedin.com/in/mladanilic/)
 
 👤 **Mohi**
 
