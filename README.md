@@ -1,177 +1,157 @@
-<a name="readme-top"></a>
-
-  <h3><b>HelloRails React Readme</b></h3>
-
-</div>
-
-<!-- TABLE OF CONTENTS -->
-
-# 📗 Table of Contents
-
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [👥 Future Features](#feature_futures)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
-
-<!-- PROJECT DESCRIPTION -->
-
-# 📖 HelloRails React <a name="about-project"></a>
-
-**HelloRails React** is a Rails and React application. React frontend is developed in the same application using Webpack. 
-
-## 🛠 Built With <a name="built-with"></a>
-
-### Tech Stack <a name="tech-stack"></a>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://rubyonrails.org/">Rails</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-<summary>Front End</summary>
-  <ul>
-    <li><a href="https://react.dev/">React</a></li>
-    <li><a href="https://redux.js.org/">Redux</a></li>
-  </ul>
-</details>
-
-<!-- Features -->
-
-### Key Features <a name="key-features"></a>
-
-- **[Creates Random quote]**
+# Booking Vespa Api
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+This project is designed for the reservation of fancy vespas. If you are preparing for a special day or event and you want a cool Vespa for it, this website is the best place for you. If you have a luxurious Vespa and want to make some extra money from it, you can add it to our website and others will be able to reserve it!
 
-<!-- LIVE DEMO -->
+Here are some of the benefits of using our website:
 
-<!-- GETTING STARTED -->
+- Wide selection of Vespas to choose from
+- Competitive prices
+- Easy and convenient booking process
+- 24/7 customer support 
 
-## 💻 Getting Started <a name="getting-started"></a>
+The main features of this website are:
+ - Users can see details of all the Vespas.
+ - Users can reserve a Vespa for a special day.
+ - Users can add their own Vespas and remove them if they want to.
+
+## Database Structure:
+<img src="" width="650">
+
+## Project Documentation 📄
+
+- Front-end GitHub repository [link](https://github.com/Thoth1111/Fullstack-Capstone-Project)👈
+
+## Kanban Board
+
+### Kanban Board [link](https://github.com/users/michaelamponsah/projects/4/views/1)
+
+### Initial state of the Kanban Board:
+![image](https://github.com/djo1975/Program-Capstone/assets/96848068/69fdee52-3f5a-4279-8ad2-82f484e7005b)
+
+### Final state of the Kanban Board:
+![image](https://github.com/djo1975/Program-Capstone/assets/96848068/8a71fce0-f987-4c60-b529-6d692e4e2ab4)
 
 
-To get a local copy up and running, follow these steps.
+### Team members: 4 (Mohi Sadeghi, Alwyn Androvelle, Moses Wamae, Mladan Ilic)
+ 
+## Built With 🛠️
+
+ - Programming Languages: Ruby, SQL.
+ - Framework: Ruby on Rails.
+ - Database: PostgreSQL.
+ - Code Editor: VS Code.
+ 
+## Getting Started
+ 
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+- A web browser like Google Chrome.
+- A code editor like Visual Studio Code with Git and Ruby.
 
-  <ul>
-    <li><a href="https://rubyonrails.org/">Rails V 3.0.5 or higher</a></li>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-    <li><a href="https://git-scm.com/">Git</a></li>
-    <li><a href="https://github.com/">GitHub account</a></li>
-  </ul>
+> You can check if Git is installed by running the following command in the terminal.
+```
+$ git --version
+```
+> Likewise for Ruby installation.
+```
+$ ruby --version && irb
+```
+To install rails, in the terminal kindly run this command:
+
+```
+$ gem install rails
+```
 
 ### Setup
 
-Clone this repository to your desired folder:
-
-```sh
-  cd desired-folder
-  git clone https://github.com/djo1975/Hello-World
-```
-
+Clone the repository using the GitHub link provided below.
 
 ### Install
 
-Install this project with:
-
-```sh
-  cd hellorails-react
-  bundle install
-  yarn install
+In the terminal, go to your file directory and run this command.
 ```
-
+$ git clone git@github.com:djo1975/Program-Capstone.git
+```
 ### Usage
 
-To run the development server, execute the following command:
+Kindly modify the files as needed.
 
-```sh
-  rails server or
-  ./bin/dev
+### Run locally
+
+Make your way to the correct directory by running this command:
+
+```
+$ cd Program-Capstone
 ```
 
-### Deployment
+Install the required dependencies to run the project with this command:
+```
+$ bundle install
+```
 
-You can deploy this project on Render. Please follow [this render deployment guide](https://render.com/docs/deploy-rails)
+Setup the database, run:
+```
+$ rails db:create
+$ rails db:migrate
+```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Then run it in your browser with this command:
 
-<!-- AUTHORS -->
+```
+$ rails server
+```
 
-## 👥 Authors <a name="authors"></a>
+### Run tests
 
+To run tests, please run this command:
+```
+$ rspec
+```
+## Authors
 
+👤 **Alwyn Androvelle**
+
+- Github: [@Thoth1111](https://github.com/Thoth1111)
+- Twitter: [@androvelle](https://twitter.com/androvelle)
+- LinkedIn: [@Alwyn](https://linkedin.com/in/alwyn-androvelle-simiyu)
+  
 👤 **Mladan Ilic**
 
 - GitHub: [@Ilic](https://github.com/djo1975)
 - Twitter: [@Ilic](https://twitter.com/MladanIlic)
 - LinkedIn: [@Ilic] (https://www.linkedin.com/in/mladanilic/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+👤 **Mohi**
 
-<!-- FUTURE FEATURES -->
+- GitHub: [@mohisa302](https://github.com/mohisa302)
+- Twitter: [@Kholochelam](https://twitter.com/Kholochelam)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mohadese-sadeghi-692551199/)
 
-## 👥 Future Features <a name="feature_futures"></a>
+👤 **Moses Wamae**
 
-- **[Create Full fledged app with other CRUD functionalities for greetings]**
+- GitHub: [@Johnadibe](https://github.com/MosDevx)
+- Twitter: [@JohnAdibe2](https://twitter.com/MosesWamae7)
+- LinkedIn: [@John Adibe](https://www.linkedin.com/in/moses-wamae-a13a67244)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## 🚀 Future Features
+ - We'd implement a robust Role Based Access Control feature.
+ - We'd integrate a rating feature to allow users give ratings to Vespas booked.
 
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/djo1975/Hello-World/issues/).
+Feel free to check the [issues page](../../issues/).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Show your support
 
-<!-- SUPPORT -->
+Give a ⭐️ if you like this project!
 
-## ⭐️ Show your support <a name="support"></a>
+## Acknowledgments
+- [Microverse](https://www.microverse.org/)
 
-If you like this project, please ⭐️ [the project repo](https://github.com/djo1975/Hello-World).
-This will highly motivate me.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-This application is developed based on [this tutorials](https://betterprogramming.pub/react-with-rails-2022-bd28e1fcd355#ad0a). 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
-
+## 📝 License
 This project is [MIT](./LICENSE) licensed.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
