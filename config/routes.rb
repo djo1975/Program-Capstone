@@ -14,9 +14,9 @@ Rails.application.routes.draw do
     put 'users/password', to: 'passwords#update'
   end
 
-  resources :reservations
-  resources :users
-  resources :vespas
-  resources :comments
-  resources :likes
+  resources :reservations, only: %i[index create show update destroy]
+  resources :users, only: %i[index create show update destroy]
+  resources :vespas, only: %i[index create show update destroy]
+  resources :comments, only: %i[index create show update destroy]
+  resources :likes, only: %i[index create show update destroy]
 end
