@@ -1,4 +1,29 @@
-# Booking Vespa Api 🛵
+<a name="readme-top"></a>
+
+# 📗 Table of Contents
+
+- [📗 Table of Contents](#-table-of-contents)
+- [🛵\[Booking Vespa API\] ](#about-project)
+  - [Database Structure](#erd)
+  - [📄\[Project Documentation\] ](#project-documentation)
+  - [Kanban Board](#kanban-board)
+  - [🛠 Built With ](#built-with)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+  - [👥 Authors ](#authors)
+  - [🔭 Future Features ](#future-features)
+  - [🤝 Contributing ](#contributing)
+  - [⭐️ Show your support ](#️support)
+  - [🙏 Acknowledgments ](#acknowledgements)
+  - [📝 License ](#license)
+
+<!-- PROJECT DESCRIPTION -->
+
+# Booking Vespa Api 🛵 <a name="about-project"></a>
 
 
 This project is designed for the reservation of fancy vespas. If you are preparing for a special day or event and you want a cool Vespa for it, this website is the best place for you. If you have a luxurious Vespa and want to make some extra money from it, you can add it to our website and others will be able to reserve it!
@@ -15,14 +40,14 @@ The main features of this website are:
  - Users can reserve a Vespa for a special day.
  - Users can add their own Vespas and remove them if they want to.
 
-## Database Structure:
+## Database Structure: <a name="erd"></a>
 <img src="https://github.com/djo1975/Program-Capstone/assets/96848068/2ed79992-db0e-44a9-a350-beaa13398486" width="650">
 
-## Project Documentation 📄
+## Project Documentation 📄 <a name="project-documentation"></a>
 
 - Front-end GitHub repository [link](https://github.com/Thoth1111/Fullstack-Capstone-Project)👈
 
-## Kanban Board
+## Kanban Board <a name="kanban-board"></a>
 
 ### Kanban Board [link](https://github.com/users/michaelamponsah/projects/4/views/1)
 
@@ -32,21 +57,22 @@ The main features of this website are:
 ### Final state of the Kanban Board:
 ![image](https://github.com/djo1975/Program-Capstone/assets/96848068/8a71fce0-f987-4c60-b529-6d692e4e2ab4)
 
-
 ### Team members: 4 (Mohi Sadeghi, Alwyn Androvelle, Moses Wamae, Mladan Ilic)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
  
-## Built With 🛠️
+## Built With 🛠️ <a name="built-with"></a>
 
  - Programming Languages: Ruby, SQL.
  - Framework: Ruby on Rails.
  - Database: PostgreSQL.
  - Code Editor: VS Code.
  
-## Getting Started
+## Getting Started <a name="getting-started"></a>
  
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
+### Prerequisites 
 
 - A web browser like Google Chrome.
 - A code editor like Visual Studio Code with Git and Ruby.
@@ -110,7 +136,10 @@ To run tests, please run this command:
 ```
 $ rspec
 ```
-## Authors
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Authors <a name="authors"></a>
 
 👤 **Alwyn Androvelle**
 
@@ -135,23 +164,31 @@ $ rspec
 - GitHub: [@Johnadibe](https://github.com/MosDevx)
 - Twitter: [@JohnAdibe2](https://twitter.com/MosesWamae7)
 - LinkedIn: [@John Adibe](https://www.linkedin.com/in/moses-wamae-a13a67244)
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Future Features
+## 🚀 Future Features <a name="future-features"></a>
  - We'd implement a robust Role Based Access Control feature.
  - We'd integrate a rating feature to allow users give ratings to Vespas booked.
 
-## 🤝 Contributing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Show your support  <a name="️support"></a>
 
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 - [Microverse](https://www.microverse.org/)
 
-## 📝 License
+## 📝 License <a name="license"></a>
 This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
