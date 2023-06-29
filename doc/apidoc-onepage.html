@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div id='container'>
+          <h4><a href='#comments'>Comments</a></h4>
+  <ul>
+      <li><a href='#comments-index'>index</a></li>
+      <li><a href='#comments-show'>show</a></li>
+      <li><a href='#comments-create'>create</a></li>
+      <li><a href='#comments-update'>update</a></li>
+      <li><a href='#comments-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#likes'>Likes</a></h4>
+  <ul>
+      <li><a href='#likes-index'>index</a></li>
+      <li><a href='#likes-show'>show</a></li>
+      <li><a href='#likes-create'>create</a></li>
+      <li><a href='#likes-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#passwords'>Passwords</a></h4>
+  <ul>
+      <li><a href='#passwords-create'>create</a></li>
+      <li><a href='#passwords-update'>update</a></li>
+  </ul>
+  <h4><a href='#registrations'>Registrations</a></h4>
+  <ul>
+      <li><a href='#registrations-create'>create</a></li>
+  </ul>
+  <h4><a href='#reservations'>Reservations</a></h4>
+  <ul>
+      <li><a href='#reservations-index'>index</a></li>
+      <li><a href='#reservations-show'>show</a></li>
+      <li><a href='#reservations-create'>create</a></li>
+      <li><a href='#reservations-update'>update</a></li>
+      <li><a href='#reservations-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#sessions'>Sessions</a></h4>
+  <ul>
+      <li><a href='#sessions-create'>create</a></li>
+      <li><a href='#sessions-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#users'>Users</a></h4>
+  <ul>
+      <li><a href='#users-index'>index</a></li>
+      <li><a href='#users-show'>show</a></li>
+      <li><a href='#users-create'>create</a></li>
+      <li><a href='#users-update'>update</a></li>
+      <li><a href='#users-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#vespas'>Vespas</a></h4>
+  <ul>
+      <li><a href='#vespas-index'>index</a></li>
+      <li><a href='#vespas-show'>show</a></li>
+      <li><a href='#vespas-create'>create</a></li>
+      <li><a href='#vespas-update'>update</a></li>
+      <li><a href='#vespas-destroy'>destroy</a></li>
+  </ul>
+
+
+
+<div>
+<p>Another API description</p>
+</div>
+
+<hr>
+
+
+  <ul class='breadcrumb'  id='comments'>
+    <li><a href='#'>Booking</a><span class='divider'>/</span></li>
+    <li class='active'>Comments</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#comments'>Comments</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='comments-index'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#comments'>Comments</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#comments-index'>
+              GET /comments
+            </a><br>
+            <small>{:method=>"GET", :path=>"/comments", :summary=>"Get all comments", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all comments"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='comments-show'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#comments'>Comments</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#comments-show'>
+              GET /comments/:id
+            </a><br>
+            <small>{:method=>"GET", :path=>"/comments/:id", :summary=>"Get a comment", :parameters=>[{:name=>"id", :description=>"Comment ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the comment details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='comments-create'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#comments'>Comments</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#comments-create'>
+              POST /comments
+            </a><br>
+            <small>{:method=>"POST", :path=>"/comments", :summary=>"Create a new comment", :parameters=>[{:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created comment details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='comments-update'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#comments'>Comments</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#comments-update'>
+              PATCH /comments/:id
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/comments/:id", :summary=>"Update a comment", :parameters=>[{:name=>"id", :description=>"Comment ID", :required=>true, :type=>"Integer"}, {:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated comment details"}}}</small>
+          </h3>
+          <h3>
+            <a href='#comments-update'>
+              PUT /comments/:id
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/comments/:id", :summary=>"Update a comment", :parameters=>[{:name=>"id", :description=>"Comment ID", :required=>true, :type=>"Integer"}, {:name=>"comment", :description=>"Comment parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}, :content=>{:type=>"String", :desc=>"Comment content"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated comment details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='comments-destroy'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#comments'>Comments</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#comments-destroy'>
+              DELETE /comments/:id
+            </a><br>
+            <small>{:method=>"DELETE", :path=>"/comments/:id", :summary=>"Delete a comment", :parameters=>[{:name=>"id", :description=>"Comment ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the deleted comment details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='likes'>
+    <li><a href='#'>Booking</a><span class='divider'>/</span></li>
+    <li class='active'>Likes</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#likes'>Likes</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='likes-index'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#likes'>Likes</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#likes-index'>
+              GET /likes
+            </a><br>
+            <small>{:method=>"GET", :path=>"/likes", :summary=>"Get all likes", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all likes"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='likes-show'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#likes'>Likes</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#likes-show'>
+              GET /likes/:id
+            </a><br>
+            <small>{:method=>"GET", :path=>"/likes/:id", :summary=>"Get a like", :parameters=>[{:name=>"id", :description=>"Like ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the like details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='likes-create'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#likes'>Likes</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#likes-create'>
+              POST /likes
+            </a><br>
+            <small>{:method=>"POST", :path=>"/likes", :summary=>"Create a new like", :parameters=>[{:name=>"like", :description=>"Like parameters", :required=>true, :type=>"Hash", :properties=>{:user_id=>{:type=>"Integer", :desc=>"User ID"}, :comment_id=>{:type=>"Integer", :desc=>"Comment ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created like details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='likes-destroy'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#likes'>Likes</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#likes-destroy'>
+              DELETE /likes/:id
+            </a><br>
+            <small>{:method=>"DELETE", :path=>"/likes/:id", :summary=>"Delete a like", :parameters=>[{:name=>"id", :description=>"Like ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the like has been deleted"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='passwords'>
+    <li><a href='#'>Booking</a><span class='divider'>/</span></li>
+    <li class='active'>Passwords</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#passwords'>Passwords</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='passwords-create'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#passwords'>Passwords</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#passwords-create'>
+              POST /users/password
+            </a><br>
+            <small>{:method=>"POST", :path=>"/users/password", :summary=>"Send reset password instructions", :parameters=>[{:name=>"user", :description=>"User parameters", :required=>true, :type=>"Hash", :properties=>{:email=>{:type=>"String", :desc=>"User's email"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status and message"}}}</small>
+          </h3>
+          <h3>
+            <a href='#passwords-create'>
+              POST /users/password
+            </a><br>
+            <small>{:method=>"POST", :path=>"/users/password", :summary=>"Send reset password instructions", :parameters=>[{:name=>"user", :description=>"User parameters", :required=>true, :type=>"Hash", :properties=>{:email=>{:type=>"String", :desc=>"User's email"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status and message"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='passwords-update'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#passwords'>Passwords</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#passwords-update'>
+              PATCH /users/password
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/users/password", :summary=>"Reset user's password", :parameters=>[{:name=>"user", :description=>"User parameters", :required=>true, :type=>"Hash", :properties=>{:reset_password_token=>{:type=>"String", :desc=>"Reset password token"}, :password=>{:type=>"String", :desc=>"New password"}, :password_confirmation=>{:type=>"String", :desc=>"Password confirmation"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status and message"}}}</small>
+          </h3>
+          <h3>
+            <a href='#passwords-update'>
+              PUT /users/password
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/users/password", :summary=>"Reset user's password", :parameters=>[{:name=>"user", :description=>"User parameters", :required=>true, :type=>"Hash", :properties=>{:reset_password_token=>{:type=>"String", :desc=>"Reset password token"}, :password=>{:type=>"String", :desc=>"New password"}, :password_confirmation=>{:type=>"String", :desc=>"Password confirmation"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status and message"}}}</small>
+          </h3>
+          <h3>
+            <a href='#passwords-update'>
+              PUT /users/password
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/users/password", :summary=>"Reset user's password", :parameters=>[{:name=>"user", :description=>"User parameters", :required=>true, :type=>"Hash", :properties=>{:reset_password_token=>{:type=>"String", :desc=>"Reset password token"}, :password=>{:type=>"String", :desc=>"New password"}, :password_confirmation=>{:type=>"String", :desc=>"Password confirmation"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status and message"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='registrations'>
+    <li><a href='#'>Booking</a><span class='divider'>/</span></li>
+    <li class='active'>Registrations</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#registrations'>Registrations</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='registrations-create'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#registrations'>Registrations</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#registrations-create'>
+              POST /users
+            </a><br>
+            <small>{:method=>"POST", :path=>"/users/sign_up", :summary=>"Sign up a new user", :parameters=>[{:name=>"user", :description=>"User parameters", :required=>true, :type=>"Hash", :properties=>{:username=>{:type=>"String", :desc=>"Username"}, :email=>{:type=>"String", :desc=>"Email"}, :password=>{:type=>"String", :desc=>"Password"}, :password_confirmation=>{:type=>"String", :desc=>"Password confirmation"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status and message"}}}</small>
+          </h3>
+          <h3>
+            <a href='#registrations-create'>
+              POST /users/sign_up
+            </a><br>
+            <small>{:method=>"POST", :path=>"/users/sign_up", :summary=>"Sign up a new user", :parameters=>[{:name=>"user", :description=>"User parameters", :required=>true, :type=>"Hash", :properties=>{:username=>{:type=>"String", :desc=>"Username"}, :email=>{:type=>"String", :desc=>"Email"}, :password=>{:type=>"String", :desc=>"Password"}, :password_confirmation=>{:type=>"String", :desc=>"Password confirmation"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status and message"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='reservations'>
+    <li><a href='#'>Booking</a><span class='divider'>/</span></li>
+    <li class='active'>Reservations</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#reservations'>Reservations</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='reservations-index'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#reservations'>Reservations</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#reservations-index'>
+              GET /reservations
+            </a><br>
+            <small>{:method=>"GET", :path=>"/reservations", :summary=>"Get all reservations", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all reservations"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='reservations-show'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#reservations'>Reservations</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#reservations-show'>
+              GET /reservations/:id
+            </a><br>
+            <small>{:method=>"GET", :path=>"/reservations/:id", :summary=>"Get a reservation by ID", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the reservation details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='reservations-create'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#reservations'>Reservations</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#reservations-create'>
+              POST /reservations
+            </a><br>
+            <small>{:method=>"POST", :path=>"/reservations", :summary=>"Create a new reservation", :parameters=>[{:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created reservation details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='reservations-update'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#reservations'>Reservations</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#reservations-update'>
+              PATCH /reservations/:id
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
+          </h3>
+          <h3>
+            <a href='#reservations-update'>
+              PUT /reservations/:id
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/reservations/:id", :summary=>"Update a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}, {:name=>"reservation", :description=>"Reservation parameters", :required=>true, :type=>"Hash", :properties=>{:start_date=>{:type=>"Date", :desc=>"Reservation start date"}, :end_date=>{:type=>"Date", :desc=>"Reservation end date"}, :description=>{:type=>"String", :desc=>"Reservation description"}, :user_id=>{:type=>"Integer", :desc=>"User ID"}, :vespa_id=>{:type=>"Integer", :desc=>"Vespa ID"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated reservation details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='reservations-destroy'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#reservations'>Reservations</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#reservations-destroy'>
+              DELETE /reservations/:id
+            </a><br>
+            <small>{:method=>"DELETE", :path=>"/reservations/:id", :summary=>"Delete a reservation", :parameters=>[{:name=>"id", :description=>"Reservation ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the reservation has been deleted"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='sessions'>
+    <li><a href='#'>Booking</a><span class='divider'>/</span></li>
+    <li class='active'>Sessions</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#sessions'>Sessions</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='sessions-create'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#sessions'>Sessions</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#sessions-create'>
+              POST /users/sign_in
+            </a><br>
+            <small>{:method=>"POST", :path=>"/users/sign_in", :summary=>"Sign in a user", :parameters=>[{:name=>"user", :description=>"User credentials", :required=>true, :type=>"Hash", :properties=>{:email=>{:type=>"String", :desc=>"User's email"}, :password=>{:type=>"String", :desc=>"User's password"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status, message, user, and token"}}}</small>
+          </h3>
+          <h3>
+            <a href='#sessions-create'>
+              POST /users/sign_in
+            </a><br>
+            <small>{:method=>"POST", :path=>"/users/sign_in", :summary=>"Sign in a user", :parameters=>[{:name=>"user", :description=>"User credentials", :required=>true, :type=>"Hash", :properties=>{:email=>{:type=>"String", :desc=>"User's email"}, :password=>{:type=>"String", :desc=>"User's password"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status, message, user, and token"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='sessions-destroy'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#sessions'>Sessions</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#sessions-destroy'>
+              DELETE /users/sign_out
+            </a><br>
+            <small>{:method=>"DELETE", :path=>"/users/sign_out", :summary=>"Sign out the current user", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status and message"}}}</small>
+          </h3>
+          <h3>
+            <a href='#sessions-destroy'>
+              DELETE /users/sign_out
+            </a><br>
+            <small>{:method=>"DELETE", :path=>"/users/sign_out", :summary=>"Sign out the current user", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with status and message"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='users'>
+    <li><a href='#'>Booking</a><span class='divider'>/</span></li>
+    <li class='active'>Users</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#users'>Users</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='users-index'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#users'>Users</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#users-index'>
+              GET /users
+            </a><br>
+            <small>{:method=>"GET", :path=>"/users", :summary=>"Get all users", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all users"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='users-show'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#users'>Users</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#users-show'>
+              GET /users/:id
+            </a><br>
+            <small>{:method=>"GET", :path=>"/users/:id", :summary=>"Get a user by ID", :parameters=>[{:name=>"id", :description=>"User ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the user details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='users-create'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#users'>Users</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#users-create'>
+              POST /users
+            </a><br>
+            <small>{:method=>"POST", :path=>"/users", :summary=>"Create a new user", :parameters=>[{:name=>"user", :description=>"User parameters", :required=>true, :type=>"Hash", :properties=>{:username=>{:type=>"String", :desc=>"Username"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created user details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='users-update'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#users'>Users</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#users-update'>
+              PATCH /users/:id
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/users/:id", :summary=>"Update a user", :parameters=>[{:name=>"id", :description=>"User ID", :required=>true, :type=>"Integer"}, {:name=>"user", :description=>"User parameters", :required=>true, :type=>"Hash", :properties=>{:username=>{:type=>"String", :desc=>"Username"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated user details"}}}</small>
+          </h3>
+          <h3>
+            <a href='#users-update'>
+              PUT /users/:id
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/users/:id", :summary=>"Update a user", :parameters=>[{:name=>"id", :description=>"User ID", :required=>true, :type=>"Integer"}, {:name=>"user", :description=>"User parameters", :required=>true, :type=>"Hash", :properties=>{:username=>{:type=>"String", :desc=>"Username"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated user details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='users-destroy'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#users'>Users</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#users-destroy'>
+              DELETE /users/:id
+            </a><br>
+            <small>{:method=>"DELETE", :path=>"/users/:id", :summary=>"Delete a user", :parameters=>[{:name=>"id", :description=>"User ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the user has been deleted"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+  </div>
+
+  <ul class='breadcrumb'  id='vespas'>
+    <li><a href='#'>Booking</a><span class='divider'>/</span></li>
+    <li class='active'>Vespas</li>
+  </ul>
+
+  <div class='page-header'>
+    <h1>
+      <a href='#vespas'>Vespas</a><br>
+      <small></small>
+    </h1>
+  </div>
+
+
+  <div class='accordion' id='accordion'>
+
+      <hr>
+
+      <ul class='breadcrumb' id='vespas-index'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#vespas'>Vespas</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>index</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#vespas-index'>
+              GET /vespas
+            </a><br>
+            <small>{:method=>"GET", :path=>"/espas", :summary=>"Get all espas", :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with all espas"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='vespas-show'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#vespas'>Vespas</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>show</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#vespas-show'>
+              GET /vespas/:id
+            </a><br>
+            <small>{:method=>"GET", :path=>"/espas/:id", :summary=>"Get a vespa by ID", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the vespa details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='vespas-create'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#vespas'>Vespas</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>create</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#vespas-create'>
+              POST /vespas
+            </a><br>
+            <small>{:method=>"POST", :path=>"/espas", :summary=>"Create a new vespa", :parameters=>[{:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the created vespa details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='vespas-update'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#vespas'>Vespas</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>update</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#vespas-update'>
+              PATCH /vespas/:id
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/espas/:id", :summary=>"Update a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}, {:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated vespa details"}}}</small>
+          </h3>
+          <h3>
+            <a href='#vespas-update'>
+              PUT /vespas/:id
+            </a><br>
+            <small>{:method=>"PUT", :path=>"/espas/:id", :summary=>"Update a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}, {:name=>"vespa", :description=>"Vespa parameters", :required=>true, :type=>"Hash", :properties=>{:name=>{:type=>"String", :desc=>"Vespa name"}, :icon=>{:type=>"String", :desc=>"Vespa icon"}, :description=>{:type=>"String", :desc=>"Vespa description"}, :cost_per_day=>{:type=>"Numeric", :desc=>"Vespa cost per day"}}}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response with the updated vespa details"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+      <hr>
+
+      <ul class='breadcrumb' id='vespas-destroy'>
+        <li>
+          <a href='#'>Booking</a>
+          <span class='divider'>/</span>
+        </li>
+        <li>
+          <a href='#vespas'>Vespas</a>
+          <span class='divider'>/</span>
+        </li>
+        <li class='active'>destroy</li>
+      </ul>
+
+      <div>
+          <h3>
+            <a href='#vespas-destroy'>
+              DELETE /vespas/:id
+            </a><br>
+            <small>{:method=>"DELETE", :path=>"/espas/:id", :summary=>"Delete a vespa", :parameters=>[{:name=>"id", :description=>"Vespa ID", :required=>true, :type=>"Integer"}], :response=>{:body=>{:status=>"JSON", :desc=>"JSON response indicating the vespa has been deleted"}}}</small>
+          </h3>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+  </div>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='./apidoc/javascripts/bundled/jquery.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/apipie.js'></script>
+</body>
+</html>
